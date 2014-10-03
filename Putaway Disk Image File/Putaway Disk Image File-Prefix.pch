@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'Putaway Disk Image File' target in the 'Putaway Disk Image File' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
