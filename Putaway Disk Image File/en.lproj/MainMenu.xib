@@ -2009,11 +2009,19 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
+						<string key="label">ASBridge</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="189790095"/>
+					</object>
+					<int key="connectionID">539</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
 						<string key="label">appDelegate</string>
 						<reference key="source" ref="189790095"/>
 						<reference key="destination" ref="976324537"/>
 					</object>
-					<int key="connectionID">537</int>
+					<int key="connectionID">538</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -3194,7 +3202,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">537</int>
+			<int key="maxID">539</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3232,13 +3240,13 @@
 					<string key="className">AppDelegate</string>
 					<string key="superclassName">NSObject</string>
 					<object class="NSMutableDictionary" key="outlets">
-						<string key="NS.key.0">putawayDiskImageFile</string>
+						<string key="NS.key.0">ASBridge</string>
 						<string key="NS.object.0">id</string>
 					</object>
 					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<string key="NS.key.0">putawayDiskImageFile</string>
+						<string key="NS.key.0">ASBridge</string>
 						<object class="IBToOneOutletInfo" key="NS.object.0">
-							<string key="name">putawayDiskImageFile</string>
+							<string key="name">ASBridge</string>
 							<string key="candidateClassName">id</string>
 						</object>
 					</object>

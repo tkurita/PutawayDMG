@@ -25,7 +25,8 @@ NSArray *filterImageVolumes(NSArray *fselection, NSArray *mounted_images)
     for (NSString *a_path in fselection) {
         for (NSDictionary *mount_info in mounted_images) {
             NSString *mount_point = mount_info[@"system-entities"][0][@"mount-point"];
-            if ([a_path hasPrefix:mount_point]) {
+            if ([a_path isEqualToString:mount_point]
+                    || [a_path hasPrefix:[mount_point stringByAppendingString:@"/"]]) {
                 [target_images addObject:mount_info];
                 break;
             }
@@ -54,13 +55,22 @@ NSArray *filterImageVolumes(NSArray *fselection, NSArray *mounted_images)
         
     NSDictionary *plist = [[a_task stdoutString] propertyList];
     NSArray *mounted_images = plist[@"images"];
-    //if (! [mouted_images count]) return nil;
+    if (! [mounted_images count]) {
+        NSAlert *alert = [NSAlert alertWithMessageText:@"No disk image is mounted."
+                                         defaultButton:@"OK"
+                                       alternateButton:nil otherButton:nil informativeTextWithFormat:@""];
+        [alert runModal];
+        return nil;
+    }
     return mounted_images;
 }
 
 - (void)application:(NSApplication *)sender openFiles:(NSArray *)filenames
 {
-    
+    NSArray *mounted_images = [self listMountedDiskImages];
+    if (! mounted_images) {
+        goto bail;
+    }
     
     
     /*
@@ -68,6 +78,7 @@ NSArray *filterImageVolumes(NSArray *fselection, NSArray *mounted_images)
      NSApplicationDelegateReplyCancel = 1,
      NSApplicationDelegateReplyFailure = 2
      */
+bail:
     [NSApp replyToOpenOrPrint:NSApplicationDelegateReplySuccess];
 }
 
@@ -85,26 +96,21 @@ NSArray *filterImageVolumes(NSArray *fselection, NSArray *mounted_images)
         NSLog(@"userInfo : %@", user_notification.userInfo);
 #endif
         [user_notification_center removeDeliveredNotification:user_notification];
-        [NSApp terminate:self];
         goto bail;
     }
     
     //if (![[user_info objectForKey:NSApplicationLaunchIsDefaultLaunchKey] boolValue]) return;
     
     NSArray *mounted_images = [self listMountedDiskImages];
-    if (! [mounted_images count]) {
-        NSAlert *alert = [NSAlert alertWithMessageText:@"No disk image is mounted."
-                                         defaultButton:@"OK"
-                                       alternateButton:nil otherButton:nil informativeTextWithFormat:@""];
-        [alert runModal];
+    if (! mounted_images) {
         goto bail;
     }
     
     NSDictionary *first_image = mounted_images[0];
     NSString *mount_point = first_image[@"system-entities"][0][@"mount-point"];
-    NSLog(@"%@", mount_point);
+    NSLog(@"First mount point : %@", mount_point);
     NSArray *fsel_array = [ASBridge finderSelectionWithMountPoint:mount_point];
-    NSLog(@"%@", fsel_array);
+    NSLog(@"Finder Selection : %@", fsel_array);
     NSArray *target_volumes = filterImageVolumes(fsel_array, mounted_images);
     if (![target_volumes count]) {
         NSOpenPanel *open_panel = [NSOpenPanel openPanel];
