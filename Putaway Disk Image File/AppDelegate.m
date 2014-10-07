@@ -1,4 +1,5 @@
 #import "AppDelegate.h"
+#import "NSTask+SimpleTask.h"
 
 typedef id(^MapBlock)(id);
 @interface NSArray (Map)
@@ -16,6 +17,7 @@ typedef id(^MapBlock)(id);
 @end
 
 @implementation AppDelegate
+
 
 NSArray *filterImageVolumes(NSArray *fselection, NSArray *mounted_images)
 {
@@ -43,6 +45,30 @@ NSArray *filterImageVolumes(NSArray *fselection, NSArray *mounted_images)
     [a_task launch];
     [a_task waitUntilExit];
     return a_task;
+}
+
+- (NSArray *)listMountedDiskImages
+{
+    NSTask *a_task = [NSTask taskLaunchingWithPath:@"/usr/bin/hdiutil"
+                                       arguments:@[@"info", @"-plist"]];
+        
+    NSDictionary *plist = [[a_task stdoutString] propertyList];
+    NSArray *mounted_images = plist[@"images"];
+    //if (! [mouted_images count]) return nil;
+    return mounted_images;
+}
+
+- (void)application:(NSApplication *)sender openFiles:(NSArray *)filenames
+{
+    
+    
+    
+    /*
+     NSApplicationDelegateReplySuccess = 0,
+     NSApplicationDelegateReplyCancel = 1,
+     NSApplicationDelegateReplyFailure = 2
+     */
+    [NSApp replyToOpenOrPrint:NSApplicationDelegateReplySuccess];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
@@ -158,33 +184,6 @@ NSArray *filterImageVolumes(NSArray *fselection, NSArray *mounted_images)
 bail:
     
     [NSApp terminate:self];
-}
-
-- (NSArray *)listMountedDiskImages
-{
-    NSTask *a_task = [[NSTask new] autorelease];
-    [a_task setLaunchPath:@"/usr/bin/hdiutil"];
-    [a_task setArguments:@[@"info", @"-plist"]];
-    NSPipe *out_pipe = [NSPipe pipe];
-    NSFileHandle *stdout_handle = [out_pipe fileHandleForReading];
-    NSPipe *err_pipe = [NSPipe pipe];
-    //NSFileHandle  *stderr_handle = [err_pipe fileHandleForReading];
-    [a_task setStandardOutput:out_pipe];
-    [a_task setStandardError:err_pipe];
-    
-    [a_task launch];
-    
-    NSData *buff;
-    NSMutableData *out_data = [NSMutableData data];
-    while ((buff = [stdout_handle availableData]) && [buff length]) {
-        [out_data appendData:buff];
-    }
-    
-    NSString *stdout_string = [[NSString alloc] initWithData:out_data encoding:NSUTF8StringEncoding];
-    NSDictionary *plist = [[stdout_string autorelease] propertyList];
-    NSArray *mounted_images = plist[@"images"];
-    //if (! [mouted_images count]) return nil;
-    return mounted_images;
 }
 
 

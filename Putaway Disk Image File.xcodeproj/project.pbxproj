@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C246AAC19E4204200A17ED3 /* NSTask+SimpleTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C246AAB19E4204200A17ED3 /* NSTask+SimpleTask.m */; };
 		2C3367DB19E390540070C838 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2B1A819DE6A0F00CDE9D2 /* main.m */; };
 		2CC2B19B19DE6A0F00CDE9D2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC2B19A19DE6A0F00CDE9D2 /* Cocoa.framework */; };
 		2CC2B19D19DE6A0F00CDE9D2 /* AppleScriptObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC2B19C19DE6A0F00CDE9D2 /* AppleScriptObjC.framework */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C246AAA19E4204200A17ED3 /* NSTask+SimpleTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTask+SimpleTask.h"; sourceTree = "<group>"; };
+		2C246AAB19E4204200A17ED3 /* NSTask+SimpleTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTask+SimpleTask.m"; sourceTree = "<group>"; };
 		2CC2B19719DE6A0F00CDE9D2 /* Putaway Disk Image File.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Putaway Disk Image File.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CC2B19A19DE6A0F00CDE9D2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		2CC2B19C19DE6A0F00CDE9D2 /* AppleScriptObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptObjC.framework; path = System/Library/Frameworks/AppleScriptObjC.framework; sourceTree = SDKROOT; };
@@ -88,6 +91,8 @@
 		2CC2B1A219DE6A0F00CDE9D2 /* Putaway Disk Image File */ = {
 			isa = PBXGroup;
 			children = (
+				2C246AAA19E4204200A17ED3 /* NSTask+SimpleTask.h */,
+				2C246AAB19E4204200A17ED3 /* NSTask+SimpleTask.m */,
 				2CC2B1AE19DE6A0F00CDE9D2 /* ASBridge.applescript */,
 				2CC2B1B819DE6AE200CDE9D2 /* AppDelegate.h */,
 				2CC2B1B919DE6AE200CDE9D2 /* AppDelegate.m */,
@@ -176,6 +181,7 @@
 				2C3367DB19E390540070C838 /* main.m in Sources */,
 				2CC2B1AF19DE6A0F00CDE9D2 /* ASBridge.applescript in Sources */,
 				2CC2B1BA19DE6AE200CDE9D2 /* AppDelegate.m in Sources */,
+				2C246AAC19E4204200A17ED3 /* NSTask+SimpleTask.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
