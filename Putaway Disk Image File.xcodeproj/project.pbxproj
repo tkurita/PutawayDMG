@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C3367DB19E390540070C838 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2B1A819DE6A0F00CDE9D2 /* main.m */; };
 		2CC2B19B19DE6A0F00CDE9D2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC2B19A19DE6A0F00CDE9D2 /* Cocoa.framework */; };
 		2CC2B19D19DE6A0F00CDE9D2 /* AppleScriptObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC2B19C19DE6A0F00CDE9D2 /* AppleScriptObjC.framework */; };
 		2CC2B1A719DE6A0F00CDE9D2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CC2B1A519DE6A0F00CDE9D2 /* InfoPlist.strings */; };
-		2CC2B1A919DE6A0F00CDE9D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2B1A819DE6A0F00CDE9D2 /* main.m */; };
 		2CC2B1AD19DE6A0F00CDE9D2 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2CC2B1AB19DE6A0F00CDE9D2 /* Credits.rtf */; };
-		2CC2B1AF19DE6A0F00CDE9D2 /* AppDelegate.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2B1AE19DE6A0F00CDE9D2 /* AppDelegate.applescript */; };
+		2CC2B1AF19DE6A0F00CDE9D2 /* ASBridge.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2B1AE19DE6A0F00CDE9D2 /* ASBridge.applescript */; };
 		2CC2B1B219DE6A1000CDE9D2 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CC2B1B019DE6A1000CDE9D2 /* MainMenu.xib */; };
+		2CC2B1BA19DE6AE200CDE9D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2B1B919DE6AE200CDE9D2 /* AppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +29,10 @@
 		2CC2B1A819DE6A0F00CDE9D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2CC2B1AA19DE6A0F00CDE9D2 /* Putaway Disk Image File-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Putaway Disk Image File-Prefix.pch"; sourceTree = "<group>"; };
 		2CC2B1AC19DE6A0F00CDE9D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		2CC2B1AE19DE6A0F00CDE9D2 /* AppDelegate.applescript */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.applescript; path = AppDelegate.applescript; sourceTree = "<group>"; };
+		2CC2B1AE19DE6A0F00CDE9D2 /* ASBridge.applescript */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.applescript; path = ASBridge.applescript; sourceTree = "<group>"; };
 		2CC2B1B119DE6A1000CDE9D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		2CC2B1B819DE6AE200CDE9D2 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2CC2B1B919DE6AE200CDE9D2 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +88,9 @@
 		2CC2B1A219DE6A0F00CDE9D2 /* Putaway Disk Image File */ = {
 			isa = PBXGroup;
 			children = (
-				2CC2B1AE19DE6A0F00CDE9D2 /* AppDelegate.applescript */,
+				2CC2B1AE19DE6A0F00CDE9D2 /* ASBridge.applescript */,
+				2CC2B1B819DE6AE200CDE9D2 /* AppDelegate.h */,
+				2CC2B1B919DE6AE200CDE9D2 /* AppDelegate.m */,
 				2CC2B1B019DE6A1000CDE9D2 /* MainMenu.xib */,
 				2CC2B1A319DE6A0F00CDE9D2 /* Supporting Files */,
 			);
@@ -168,8 +173,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CC2B1A919DE6A0F00CDE9D2 /* main.m in Sources */,
-				2CC2B1AF19DE6A0F00CDE9D2 /* AppDelegate.applescript in Sources */,
+				2C3367DB19E390540070C838 /* main.m in Sources */,
+				2CC2B1AF19DE6A0F00CDE9D2 /* ASBridge.applescript in Sources */,
+				2CC2B1BA19DE6AE200CDE9D2 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,7 +237,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.8;
 			};
 			name = Debug;
 		};
@@ -239,7 +245,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -256,7 +262,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.8;
 			};
 			name = Release;
 		};
@@ -267,6 +273,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Putaway Disk Image File/Putaway Disk Image File-Prefix.pch";
 				INFOPLIST_FILE = "Putaway Disk Image File/Putaway Disk Image File-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -279,6 +286,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Putaway Disk Image File/Putaway Disk Image File-Prefix.pch";
 				INFOPLIST_FILE = "Putaway Disk Image File/Putaway Disk Image File-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -303,6 +311,7 @@
 				2CC2B1B719DE6A1000CDE9D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
