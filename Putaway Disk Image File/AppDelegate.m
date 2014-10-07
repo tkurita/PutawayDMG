@@ -1,6 +1,8 @@
 #import "AppDelegate.h"
 #import "NSTask+SimpleTask.h"
 
+#define useLog 1
+
 typedef id(^MapBlock)(id);
 @interface NSArray (Map)
 - (NSArray *)map:(MapBlock)block;
@@ -65,6 +67,90 @@ NSArray *filterImageVolumes(NSArray *fselection, NSArray *mounted_images)
     return mounted_images;
 }
 
+- (BOOL)proceessWithSelection:(NSArray *)selection mountedImages:(NSArray *)mntImages
+{
+    NSArray *target_volumes = filterImageVolumes(selection, mntImages);
+    if (![target_volumes count]) {
+        NSOpenPanel *open_panel = [NSOpenPanel openPanel];
+        [open_panel setCanChooseDirectories:YES];
+        [open_panel setCanChooseFiles:NO];
+        NSDictionary *first_image = mntImages[0];
+        NSString *mount_point = first_image[@"system-entities"][0][@"mount-point"];
+        [open_panel setDirectoryURL:[NSURL fileURLWithPath:mount_point]];
+        [open_panel setPrompt:@"Choose a disk of a disk image" ];
+        if ([open_panel runModal] == NSFileHandlingPanelCancelButton ) {
+            return NO;
+        }
+        NSArray *urls = [open_panel URLs];
+        NSArray *selected_items = [urls map:^id(NSURL *url) {return [url path];}];
+        target_volumes = filterImageVolumes(selected_items, mntImages);
+    }
+    
+    if (![target_volumes count]) {
+        NSAlert *alert = [NSAlert alertWithMessageText:@"Select a mounted disk image volume."
+                                         defaultButton:@"OK"
+                                       alternateButton:nil otherButton:nil informativeTextWithFormat:@""];
+        [alert runModal];
+        return NO;
+    }
+    
+    NSUserNotificationCenter *uncenter = [NSUserNotificationCenter defaultUserNotificationCenter];
+    
+    for (NSDictionary *mount_info in target_volumes) {
+        NSUserNotification *unotification = [[NSUserNotification new] autorelease];
+        unotification.title = @"Detaching";
+        NSString *mount_point = mount_info[@"system-entities"][0][@"mount-point"];
+        unotification.informativeText = mount_point;
+        [uncenter deliverNotification:unotification];
+        NSString *dev_entry = mount_info[@"system-entities"][0][@"dev-entry"];
+        
+        NSTask *detach_task = [self launchTaskWithWaiting:@"/usr/bin/hdiutil"
+                                                arguments:@[@"detach", dev_entry]];
+        if ([detach_task terminationStatus] != 0) {
+            NSString *err_text = [[[NSString alloc] initWithData:
+                                   [[[detach_task standardError] fileHandleForReading] availableData]
+                                                        encoding:NSUTF8StringEncoding] autorelease];
+            NSAlert *alert = [NSAlert alertWithMessageText:@"Failed to detach a disk."
+                                             defaultButton:@"OK"
+                                           alternateButton:nil otherButton:nil
+                                 informativeTextWithFormat:@"%@ : %@", mount_point, err_text];
+            [alert runModal];
+            return NO;
+        }
+        
+        unotification = [[NSUserNotification new] autorelease];
+        unotification.title = @"Deleting a disk image";
+        CFDataRef bookmark_data = CFURLCreateBookmarkDataFromAliasRecord(kCFAllocatorDefault,
+                                                                         (CFDataRef)mount_info[@"image-alias"]);
+        Boolean isState;
+        CFErrorRef error = NULL;
+        CFURLRef image_alias = CFURLCreateByResolvingBookmarkData(kCFAllocatorDefault, bookmark_data,
+                                                                  0, NULL, NULL, &isState, &error);
+        if (error) {
+            CFShow(error);
+            return NO;
+        }
+        
+        NSString *image_path = [(NSURL *)image_alias path];
+        unotification.informativeText = image_path;
+        [uncenter deliverNotification:unotification];
+        
+        /*[[NSWorkspace sharedWorkspace] recycleURLs:@[(NSURL *)image_alias]
+         completionHandler:^void(NSDictionary *newURLs, NSError *error) {
+         NSLog(@"new URL : %@, error:%@", newURLs, error);
+         }]; //sometimes does not work
+         */
+        
+        [[NSWorkspace sharedWorkspace] performFileOperation:NSWorkspaceRecycleOperation
+                                                     source:[image_path stringByDeletingLastPathComponent]
+                                                destination:@""
+                                                      files:@[[image_path lastPathComponent]]
+                                                        tag:nil];
+        
+    }
+    return YES;
+}
+
 - (void)application:(NSApplication *)sender openFiles:(NSArray *)filenames
 {
     NSArray *mounted_images = [self listMountedDiskImages];
@@ -72,7 +158,7 @@ NSArray *filterImageVolumes(NSArray *fselection, NSArray *mounted_images)
         goto bail;
     }
     
-    
+    [self proceessWithSelection:filenames mountedImages:mounted_images];
     /*
      NSApplicationDelegateReplySuccess = 0,
      NSApplicationDelegateReplyCancel = 1,
@@ -81,6 +167,7 @@ NSArray *filterImageVolumes(NSArray *fselection, NSArray *mounted_images)
 bail:
     [NSApp replyToOpenOrPrint:NSApplicationDelegateReplySuccess];
 }
+
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
@@ -99,7 +186,7 @@ bail:
         goto bail;
     }
     
-    //if (![[user_info objectForKey:NSApplicationLaunchIsDefaultLaunchKey] boolValue]) return;
+    if (![[user_info objectForKey:NSApplicationLaunchIsDefaultLaunchKey] boolValue]) goto bail;
     
     NSArray *mounted_images = [self listMountedDiskImages];
     if (! mounted_images) {
