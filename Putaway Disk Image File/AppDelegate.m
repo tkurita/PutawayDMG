@@ -170,6 +170,9 @@ bail:
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+#if useLog
+	NSLog(@"applicationDidFinishLaunching");
+#endif
     NSUserNotificationCenter *user_notification_center = [NSUserNotificationCenter defaultUserNotificationCenter];
     //[user_notification_center setDelegate:self];
 	//[DonationReminder remindDonation];
@@ -185,16 +188,14 @@ bail:
         goto bail;
     }
     
-    if (![[user_info objectForKey:NSApplicationLaunchIsDefaultLaunchKey] boolValue]) goto bail;
+    if (![[user_info objectForKey:NSApplicationLaunchIsDefaultLaunchKey] boolValue]) return;
     
     NSArray *mounted_images = [self listMountedDiskImages];
     if (! mounted_images) {
         goto bail;
     }
     
-    NSDictionary *first_image = mounted_images[0];
-    NSString *mount_point = first_image[@"system-entities"][0][@"mount-point"];
-    NSArray *fsel_array = [ASBridge finderSelectionWithMountPoint:mount_point];
+    NSArray *fsel_array = [ASBridge selectionInFinder];
 #if useLog
     NSLog(@"Finder Selection : %@", fsel_array);
 #endif
@@ -206,10 +207,13 @@ bail:
 
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification
 {
+#if useLog
+	NSLog(@"applicationWillFinishLaunching");
+#endif
 	[NSApp setServicesProvider:self];
 }
 
-- (void)revealDiskImageFile:(NSPasteboard *)pboard userData:(NSString *)data error:(NSString **)error
+- (void)revealDiskImageFileFromPasteboard:(NSPasteboard *)pboard userData:(NSString *)data error:(NSString **)error
 {
 #if useLog
 	NSLog(@"start revealDiskImageFile");
@@ -249,7 +253,7 @@ bail:
     }
 	
 bail:
-    return;
+    [NSApp terminate:self];
 }
 
 @end

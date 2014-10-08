@@ -50,7 +50,7 @@
 				<string>Reveal Disk Image FIle</string>
 			</dict>
 			<key>NSMessage</key>
-			<string>revealDiskImageFile</string>
+			<string>revealDiskImageFileFromPasteboard</string>
 			<key>NSSendFileTypes</key>
 			<array>
 				<string>public.item</string>
@@ -64,7 +64,7 @@
 				<string>FilePath</string>
 			</dict>
 			<key>NSPortName</key>
-			<string>PutawayDiskImageFileService</string>
+			<string>Putaway Disk Image File</string>
 			<key>NSSendTypes</key>
 			<array>
 				<string>NSFilenamesPboardType</string>
