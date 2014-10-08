@@ -7,8 +7,9 @@ script ASBridge
     on finderSelectionWithMountPoint_(mount_point)
         --log "start finderSelectionWithMountPoint_"
         tell FinderSelection's make_for_item()
-            set_chooser_for_folder()
-            set_prompt_message("Choose a disk of a disk image")
+            --set_chooser_for_folder()
+            --set_prompt_message("Choose a disk of a disk image")
+            set_use_chooser(false)
             set_default_location((mount_point as text) as POSIX file)
             set_use_insertion_location(true)
             set a_list to get_selection()

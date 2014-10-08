@@ -168,7 +168,6 @@ bail:
     [NSApp replyToOpenOrPrint:NSApplicationDelegateReplySuccess];
 }
 
-
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     NSUserNotificationCenter *user_notification_center = [NSUserNotificationCenter defaultUserNotificationCenter];
@@ -205,5 +204,52 @@ bail:
     [NSApp terminate:self];
 }
 
+- (void)applicationWillFinishLaunching:(NSNotification *)aNotification
+{
+	[NSApp setServicesProvider:self];
+}
+
+- (void)revealDiskImageFile:(NSPasteboard *)pboard userData:(NSString *)data error:(NSString **)error
+{
+#if useLog
+	NSLog(@"start revealDiskImageFile");
+#endif
+    NSArray *types = [pboard types];
+	NSArray *filenames;
+	if (![types containsObject:NSFilenamesPboardType]
+		|| !(filenames = [pboard propertyListForType:NSFilenamesPboardType])) {
+        *error = NSLocalizedString(@"Error: Pasteboard doesn't contain file paths.",
+								   @"Pasteboard couldn't give string.");
+        return;
+    }
+    
+    NSArray *mounted_images = [self listMountedDiskImages];
+    if (! mounted_images) {
+        goto bail;
+    }
+    NSArray *target_volumes = filterImageVolumes(filenames, mounted_images);
+    if (![target_volumes count]) {
+        NSLog(@"Can't find a image file corresponding to the selection");
+        goto bail;
+    }
+    
+    for (NSDictionary *mount_info in target_volumes) {
+        CFDataRef bookmark_data = CFURLCreateBookmarkDataFromAliasRecord(kCFAllocatorDefault,
+                                                                         (CFDataRef)mount_info[@"image-alias"]);
+        Boolean isState;
+        CFErrorRef error = NULL;
+        CFURLRef image_alias = CFURLCreateByResolvingBookmarkData(kCFAllocatorDefault, bookmark_data,
+                                                                  0, NULL, NULL, &isState, &error);
+        if (error) {
+            CFShow(error);
+            goto bail;
+        }
+        NSString *image_path = [(NSURL *)image_alias path];
+        [[NSWorkspace sharedWorkspace] selectFile:image_path inFileViewerRootedAtPath:@""];
+    }
+	
+bail:
+    return;
+}
 
 @end

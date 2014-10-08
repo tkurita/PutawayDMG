@@ -41,5 +41,35 @@
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>NSServices</key>
+	<array>
+		<dict>
+			<key>NSMenuItem</key>
+			<dict>
+				<key>default</key>
+				<string>Reveal Disk Image FIle</string>
+			</dict>
+			<key>NSMessage</key>
+			<string>revealDiskImageFile</string>
+			<key>NSSendFileTypes</key>
+			<array>
+				<string>public.item</string>
+				<string>public.folder</string>
+				<string>public.symlink</string>
+				<string>com.apple.alias-file</string>
+			</array>
+			<key>NSRequiredContext</key>
+			<dict>
+				<key>NSTextContent</key>
+				<string>FilePath</string>
+			</dict>
+			<key>NSPortName</key>
+			<string>PutawayDiskImageFileService</string>
+			<key>NSSendTypes</key>
+			<array>
+				<string>NSFilenamesPboardType</string>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>
