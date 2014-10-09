@@ -18,6 +18,7 @@
 		2CC2B1AF19DE6A0F00CDE9D2 /* ASBridge.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2B1AE19DE6A0F00CDE9D2 /* ASBridge.applescript */; };
 		2CC2B1B219DE6A1000CDE9D2 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CC2B1B019DE6A1000CDE9D2 /* MainMenu.xib */; };
 		2CC2B1BA19DE6AE200CDE9D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2B1B919DE6AE200CDE9D2 /* AppDelegate.m */; };
+		2CC39C8519E66872001384E2 /* ServicesMenu.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CC39C8719E66872001384E2 /* ServicesMenu.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -54,6 +55,8 @@
 		2CC2B1B119DE6A1000CDE9D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		2CC2B1B819DE6AE200CDE9D2 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2CC2B1B919DE6AE200CDE9D2 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2CC39C8619E66872001384E2 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file; name = ja; path = ja.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
+		2CC39C8819E66876001384E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +134,7 @@
 				2CC2B1A819DE6A0F00CDE9D2 /* main.m */,
 				2CC2B1AA19DE6A0F00CDE9D2 /* Putaway Disk Image File-Prefix.pch */,
 				2CC2B1AB19DE6A0F00CDE9D2 /* Credits.rtf */,
+				2CC39C8719E66872001384E2 /* ServicesMenu.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -191,6 +195,7 @@
 				2CC2B1A719DE6A0F00CDE9D2 /* InfoPlist.strings in Resources */,
 				2CC2B1AD19DE6A0F00CDE9D2 /* Credits.rtf in Resources */,
 				2CC2B1B219DE6A1000CDE9D2 /* MainMenu.xib in Resources */,
+				2CC39C8519E66872001384E2 /* ServicesMenu.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +239,15 @@
 				2CC2B1B119DE6A1000CDE9D2 /* en */,
 			);
 			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		2CC39C8719E66872001384E2 /* ServicesMenu.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2CC39C8619E66872001384E2 /* ja */,
+				2CC39C8819E66876001384E2 /* en */,
+			);
+			name = ServicesMenu.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
