@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2C246AAC19E4204200A17ED3 /* NSTask+SimpleTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C246AAB19E4204200A17ED3 /* NSTask+SimpleTask.m */; };
 		2C3367DB19E390540070C838 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2B1A819DE6A0F00CDE9D2 /* main.m */; };
+		2C4A364619E648880031E521 /* DonationReminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C4A364419E6484C0031E521 /* DonationReminder.framework */; };
+		2C4A364819E648A40031E521 /* DonationReminder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2C4A364719E648A40031E521 /* DonationReminder.framework */; };
 		2CC2B19B19DE6A0F00CDE9D2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC2B19A19DE6A0F00CDE9D2 /* Cocoa.framework */; };
 		2CC2B19D19DE6A0F00CDE9D2 /* AppleScriptObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC2B19C19DE6A0F00CDE9D2 /* AppleScriptObjC.framework */; };
 		2CC2B1A719DE6A0F00CDE9D2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CC2B1A519DE6A0F00CDE9D2 /* InfoPlist.strings */; };
@@ -18,9 +20,25 @@
 		2CC2B1BA19DE6AE200CDE9D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2B1B919DE6AE200CDE9D2 /* AppDelegate.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		2C4A364319E648190031E521 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2C4A364819E648A40031E521 /* DonationReminder.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		2C246AAA19E4204200A17ED3 /* NSTask+SimpleTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTask+SimpleTask.h"; sourceTree = "<group>"; };
 		2C246AAB19E4204200A17ED3 /* NSTask+SimpleTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTask+SimpleTask.m"; sourceTree = "<group>"; };
+		2C4A364419E6484C0031E521 /* DonationReminder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DonationReminder.framework; sourceTree = "<group>"; };
+		2C4A364719E648A40031E521 /* DonationReminder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DonationReminder.framework; sourceTree = "<group>"; };
+		2C4A364919E64D7B0031E521 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2CC2B19719DE6A0F00CDE9D2 /* Putaway Disk Image File.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Putaway Disk Image File.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CC2B19A19DE6A0F00CDE9D2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		2CC2B19C19DE6A0F00CDE9D2 /* AppleScriptObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptObjC.framework; path = System/Library/Frameworks/AppleScriptObjC.framework; sourceTree = SDKROOT; };
@@ -43,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C4A364619E648880031E521 /* DonationReminder.framework in Frameworks */,
 				2CC2B19B19DE6A0F00CDE9D2 /* Cocoa.framework in Frameworks */,
 				2CC2B19D19DE6A0F00CDE9D2 /* AppleScriptObjC.framework in Frameworks */,
 			);
@@ -55,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				2CC2B1A219DE6A0F00CDE9D2 /* Putaway Disk Image File */,
+				2C4A364719E648A40031E521 /* DonationReminder.framework */,
 				2CC2B19919DE6A0F00CDE9D2 /* Frameworks */,
 				2CC2B19819DE6A0F00CDE9D2 /* Products */,
 			);
@@ -71,6 +91,7 @@
 		2CC2B19919DE6A0F00CDE9D2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2C4A364419E6484C0031E521 /* DonationReminder.framework */,
 				2CC2B19A19DE6A0F00CDE9D2 /* Cocoa.framework */,
 				2CC2B19C19DE6A0F00CDE9D2 /* AppleScriptObjC.framework */,
 				2CC2B19E19DE6A0F00CDE9D2 /* Other Frameworks */,
@@ -124,6 +145,7 @@
 				2CC2B19319DE6A0F00CDE9D2 /* Sources */,
 				2CC2B19419DE6A0F00CDE9D2 /* Frameworks */,
 				2CC2B19519DE6A0F00CDE9D2 /* Resources */,
+				2C4A364319E648190031E521 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -149,6 +171,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				ja,
 			);
 			mainGroup = 2CC2B18E19DE6A0F00CDE9D2;
 			productRefGroup = 2CC2B19819DE6A0F00CDE9D2 /* Products */;
@@ -192,6 +215,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2CC2B1A619DE6A0F00CDE9D2 /* en */,
+				2C4A364919E64D7B0031E521 /* ja */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -277,6 +301,10 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Putaway Disk Image File/Putaway Disk Image File-Prefix.pch";
 				INFOPLIST_FILE = "Putaway Disk Image File/Putaway Disk Image File-Info.plist";
@@ -292,6 +320,10 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Putaway Disk Image File/Putaway Disk Image File-Prefix.pch";
 				INFOPLIST_FILE = "Putaway Disk Image File/Putaway Disk Image File-Info.plist";

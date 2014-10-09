@@ -1,5 +1,6 @@
 #import "AppDelegate.h"
 #import "NSTask+SimpleTask.h"
+#import "DonationReminder/DonationReminder.h"
 
 #define useLog 1
 
@@ -183,7 +184,7 @@ bail:
 #endif
     NSUserNotificationCenter *user_notification_center = [NSUserNotificationCenter defaultUserNotificationCenter];
     //[user_notification_center setDelegate:self];
-	//[DonationReminder remindDonation];
+	[DonationReminder remindDonation];
     
     NSDictionary *user_info = aNotification.userInfo;
     NSUserNotification *user_notification = [user_info objectForKey:NSApplicationLaunchUserNotificationKey];
