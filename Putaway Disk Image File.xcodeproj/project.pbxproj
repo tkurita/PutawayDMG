@@ -20,6 +20,7 @@
 		2CC2B1BA19DE6AE200CDE9D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2B1B919DE6AE200CDE9D2 /* AppDelegate.m */; };
 		2CC39C8519E66872001384E2 /* ServicesMenu.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CC39C8719E66872001384E2 /* ServicesMenu.strings */; };
 		2CC39C8B19E66C9B001384E2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CC39C8D19E66C9B001384E2 /* Localizable.strings */; };
+		2CC39C9319E67252001384E2 /* MainMenu.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CC39C9119E67252001384E2 /* MainMenu.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -60,6 +61,8 @@
 		2CC39C8819E66876001384E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/ServicesMenu.strings; sourceTree = "<group>"; };
 		2CC39C8C19E66C9B001384E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2CC39C8E19E66C9C001384E2 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2CC39C8F19E66EDA001384E2 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		2CC39C9219E67252001384E2 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/MainMenu.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +135,7 @@
 		2CC2B1A319DE6A0F00CDE9D2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2CC39C9119E67252001384E2 /* MainMenu.strings */,
 				2CC2B1A419DE6A0F00CDE9D2 /* Putaway Disk Image File-Info.plist */,
 				2CC2B1A519DE6A0F00CDE9D2 /* InfoPlist.strings */,
 				2CC2B1A819DE6A0F00CDE9D2 /* main.m */,
@@ -150,6 +154,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2CC2B1B519DE6A1000CDE9D2 /* Build configuration list for PBXNativeTarget "Putaway Disk Image File" */;
 			buildPhases = (
+				2CC39C9019E66FEB001384E2 /* ShellScript */,
 				2CC2B19319DE6A0F00CDE9D2 /* Sources */,
 				2CC2B19419DE6A0F00CDE9D2 /* Frameworks */,
 				2CC2B19519DE6A0F00CDE9D2 /* Resources */,
@@ -201,10 +206,30 @@
 				2CC2B1B219DE6A1000CDE9D2 /* MainMenu.xib in Resources */,
 				2CC39C8519E66872001384E2 /* ServicesMenu.strings in Resources */,
 				2CC39C8B19E66C9B001384E2 /* Localizable.strings in Resources */,
+				2CC39C9319E67252001384E2 /* MainMenu.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2CC39C9019E66FEB001384E2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Putaway Disk Image File/en.lproj/MainMenu.xib",
+				"$(SRCROOT)/Putaway Disk Image File/ja.lproj/MainMenu.strings",
+			);
+			outputPaths = (
+				"$(SRCROOT)/Putaway Disk Image File/ja.lproj/MainMenu.xib",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Extract English strings (use this to check if you added new strings to your nibs)\n# ibtool --generate-strings-file Resources/English.lproj/MainWindow.strings Resources/English.lproj/MainWindow.xib\n# Generate Localized interface\n\nfunction generate_localized_interface\n{\n    base_lang=$1\n    target_lang=$2\n    target_nib=$3\n    \n    nib_basename=`echo ${target_nib} | sed -E -e 's/\\.(nib|xib)//'`\n    \n    target_lang_strings=${target_lang}.lproj/${nib_basename}.strings\n    target_lang_nib=${target_lang}.lproj/${target_nib}\n    \n    if ! [ -e ${target_lang_strings} ]; then\n\tibtool --generate-strings-file ${target_lang_strings} ${target_lang_nib}\n    else\n\techo \"${target_lang_strings} exist\"\U0013\n    fi\n    \n    ibtool --strings-file ${target_lang_strings} --write ${target_lang_nib} ${base_lang}.lproj/${target_nib}\n    if [ -e ${target_lang_nib}/.svn ]; then\n\trm -rf ${target_lang_nib}/.svn\n    fi\n}\n\ncd 'Putaway Disk Image File'\ngenerate_localized_interface en ja MainMenu.xib";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2CC2B19319DE6A0F00CDE9D2 /* Sources */ = {
@@ -242,6 +267,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2CC2B1B119DE6A1000CDE9D2 /* en */,
+				2CC39C8F19E66EDA001384E2 /* ja */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -262,6 +288,14 @@
 				2CC39C8E19E66C9C001384E2 /* ja */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		2CC39C9119E67252001384E2 /* MainMenu.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2CC39C9219E67252001384E2 /* ja */,
+			);
+			name = MainMenu.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
