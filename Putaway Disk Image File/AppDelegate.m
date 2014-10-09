@@ -59,7 +59,8 @@ NSArray *filterImageVolumes(NSArray *fselection, NSArray *mounted_images)
     NSDictionary *plist = [[a_task stdoutString] propertyList];
     NSArray *mounted_images = plist[@"images"];
     if (! [mounted_images count]) {
-        NSAlert *alert = [NSAlert alertWithMessageText:@"No disk image is mounted."
+        NSAlert *alert = [NSAlert alertWithMessageText:
+                                        NSLocalizedString(@"No disk image is mounted.", @"error message")
                                          defaultButton:@"OK"
                                        alternateButton:nil otherButton:nil informativeTextWithFormat:@""];
         [alert runModal];
@@ -78,7 +79,7 @@ NSArray *filterImageVolumes(NSArray *fselection, NSArray *mounted_images)
         NSDictionary *first_image = mntImages[0];
         NSString *mount_point = first_image[@"system-entities"][0][@"mount-point"];
         [open_panel setDirectoryURL:[NSURL fileURLWithPath:mount_point]];
-        [open_panel setPrompt:@"Choose a disk of a disk image" ];
+        [open_panel setPrompt:NSLocalizedString(@"Choose a disk of a disk image", @"button in chooser")];
         if ([open_panel runModal] == NSFileHandlingPanelCancelButton ) {
             return NO;
         }
@@ -88,7 +89,8 @@ NSArray *filterImageVolumes(NSArray *fselection, NSArray *mounted_images)
     }
     
     if (![target_volumes count]) {
-        NSAlert *alert = [NSAlert alertWithMessageText:@"Select a mounted disk image volume."
+        NSAlert *alert = [NSAlert alertWithMessageText:
+                                        NSLocalizedString(@"Select a mounted disk image volume.", @"alert")
                                          defaultButton:@"OK"
                                        alternateButton:nil otherButton:nil informativeTextWithFormat:@""];
         [alert runModal];
@@ -99,7 +101,7 @@ NSArray *filterImageVolumes(NSArray *fselection, NSArray *mounted_images)
     
     for (NSDictionary *mount_info in target_volumes) {
         NSUserNotification *unotification = [NSUserNotification new];
-        unotification.title = @"Detaching";
+        unotification.title = NSLocalizedString(@"Detaching", @"notification");
         NSString *mount_point = mount_info[@"system-entities"][0][@"mount-point"];
         unotification.informativeText = mount_point;
         [uncenter deliverNotification:unotification];
@@ -111,7 +113,8 @@ NSArray *filterImageVolumes(NSArray *fselection, NSArray *mounted_images)
             NSString *err_text = [[NSString alloc] initWithData:
                                    [[[detach_task standardError] fileHandleForReading] availableData]
                                                         encoding:NSUTF8StringEncoding];
-            NSAlert *alert = [NSAlert alertWithMessageText:@"Failed to detach a disk."
+            NSAlert *alert = [NSAlert alertWithMessageText:
+                                    NSLocalizedString(@"Failed to detach a disk.", @"alert")
                                              defaultButton:@"OK"
                                            alternateButton:nil otherButton:nil
                                  informativeTextWithFormat:@"%@ : %@", mount_point, err_text];
@@ -120,12 +123,13 @@ NSArray *filterImageVolumes(NSArray *fselection, NSArray *mounted_images)
         }
         
         unotification = [NSUserNotification new];
-        unotification.title = @"Deleting a disk image";
+        unotification.title = NSLocalizedString(@"Deleting a disk image", @"notification");
         CFDataRef bookmark_data = CFURLCreateBookmarkDataFromAliasRecord(kCFAllocatorDefault,
-                                                                         (__bridge CFDataRef)mount_info[@"image-alias"]);
+                                                        (__bridge CFDataRef)mount_info[@"image-alias"]);
         Boolean isState;
         CFErrorRef error = NULL;
-        NSURL *image_alias = (__bridge_transfer NSURL *)CFURLCreateByResolvingBookmarkData(kCFAllocatorDefault, bookmark_data,
+        NSURL *image_alias = (__bridge_transfer NSURL *)CFURLCreateByResolvingBookmarkData(
+                                                            kCFAllocatorDefault, bookmark_data,
                                                                   0, NULL, NULL, &isState, &error);
         if (error) {
             CFShow(error);
@@ -252,10 +256,11 @@ bail:
     
     for (NSDictionary *mount_info in target_volumes) {
         CFDataRef bookmark_data = CFURLCreateBookmarkDataFromAliasRecord(kCFAllocatorDefault,
-                                                                         (__bridge CFDataRef)mount_info[@"image-alias"]);
+                                                      (__bridge CFDataRef)mount_info[@"image-alias"]);
         Boolean isState;
         CFErrorRef error = NULL;
-        NSURL *image_alias = (__bridge_transfer NSURL *)CFURLCreateByResolvingBookmarkData(kCFAllocatorDefault, bookmark_data,
+        NSURL *image_alias = (__bridge_transfer NSURL *)CFURLCreateByResolvingBookmarkData(
+                                                                kCFAllocatorDefault, bookmark_data,
                                                                   0, NULL, NULL, &isState, &error);
         if (error) {
             CFShow(error);
