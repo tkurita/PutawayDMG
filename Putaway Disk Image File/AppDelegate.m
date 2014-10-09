@@ -174,6 +174,12 @@ bail:
 #if useLog
 	NSLog(@"applicationShouldTerminateAfterLastWindowClosed");
 #endif
+    NSArray *wins = [NSApp windows];
+    // even a window of DonationReminder is remained, this method will be called.
+    // then check visivility of all windows.
+    for (NSWindow *a_win in wins) {
+        if ([a_win isVisible]) return NO;
+    }
     return YES;
 }
 
