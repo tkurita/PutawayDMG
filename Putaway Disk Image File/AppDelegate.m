@@ -39,7 +39,7 @@ NSArray *filterImageVolumes(NSArray *fselection, NSArray *mounted_images)
 
 - (NSTask *)launchTaskWithWaiting:(NSString *)launchPath arguments:(NSArray *)args
 {
-    NSTask *a_task = [[NSTask new] autorelease];
+    NSTask *a_task = [NSTask new];
     [a_task setLaunchPath:launchPath];
     [a_task setArguments:args];
     [a_task setStandardOutput:[NSPipe pipe]];
@@ -97,7 +97,7 @@ NSArray *filterImageVolumes(NSArray *fselection, NSArray *mounted_images)
     NSUserNotificationCenter *uncenter = [NSUserNotificationCenter defaultUserNotificationCenter];
     
     for (NSDictionary *mount_info in target_volumes) {
-        NSUserNotification *unotification = [[NSUserNotification new] autorelease];
+        NSUserNotification *unotification = [NSUserNotification new];
         unotification.title = @"Detaching";
         NSString *mount_point = mount_info[@"system-entities"][0][@"mount-point"];
         unotification.informativeText = mount_point;
@@ -107,9 +107,9 @@ NSArray *filterImageVolumes(NSArray *fselection, NSArray *mounted_images)
         NSTask *detach_task = [self launchTaskWithWaiting:@"/usr/bin/hdiutil"
                                                 arguments:@[@"detach", dev_entry]];
         if ([detach_task terminationStatus] != 0) {
-            NSString *err_text = [[[NSString alloc] initWithData:
+            NSString *err_text = [[NSString alloc] initWithData:
                                    [[[detach_task standardError] fileHandleForReading] availableData]
-                                                        encoding:NSUTF8StringEncoding] autorelease];
+                                                        encoding:NSUTF8StringEncoding];
             NSAlert *alert = [NSAlert alertWithMessageText:@"Failed to detach a disk."
                                              defaultButton:@"OK"
                                            alternateButton:nil otherButton:nil
@@ -118,20 +118,20 @@ NSArray *filterImageVolumes(NSArray *fselection, NSArray *mounted_images)
             return NO;
         }
         
-        unotification = [[NSUserNotification new] autorelease];
+        unotification = [NSUserNotification new];
         unotification.title = @"Deleting a disk image";
         CFDataRef bookmark_data = CFURLCreateBookmarkDataFromAliasRecord(kCFAllocatorDefault,
-                                                                         (CFDataRef)mount_info[@"image-alias"]);
+                                                                         (__bridge CFDataRef)mount_info[@"image-alias"]);
         Boolean isState;
         CFErrorRef error = NULL;
-        CFURLRef image_alias = CFURLCreateByResolvingBookmarkData(kCFAllocatorDefault, bookmark_data,
+        NSURL *image_alias = (__bridge_transfer NSURL *)CFURLCreateByResolvingBookmarkData(kCFAllocatorDefault, bookmark_data,
                                                                   0, NULL, NULL, &isState, &error);
         if (error) {
             CFShow(error);
             return NO;
         }
         
-        NSString *image_path = [(NSURL *)image_alias path];
+        NSString *image_path = [image_alias path];
         unotification.informativeText = image_path;
         [uncenter deliverNotification:unotification];
         
@@ -168,6 +168,14 @@ bail:
     [NSApp replyToOpenOrPrint:NSApplicationDelegateReplySuccess];
 }
 
+- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication
+{
+#if useLog
+	NSLog(@"applicationShouldTerminateAfterLastWindowClosed");
+#endif
+    return YES;
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
 #if useLog
@@ -185,24 +193,21 @@ bail:
         NSLog(@"userInfo : %@", user_notification.userInfo);
 #endif
         [user_notification_center removeDeliveredNotification:user_notification];
-        goto bail;
+        return;
     }
     
     if (![[user_info objectForKey:NSApplicationLaunchIsDefaultLaunchKey] boolValue]) return;
     
     NSArray *mounted_images = [self listMountedDiskImages];
     if (! mounted_images) {
-        goto bail;
+        return;
     }
     
-    NSArray *fsel_array = [ASBridge selectionInFinder];
+    NSArray *fsel_array = [asBridgeInstance selectionInFinder];
 #if useLog
     NSLog(@"Finder Selection : %@", fsel_array);
 #endif
     [self proceessWithSelection:fsel_array mountedImages:mounted_images];
-bail:
-    
-    [NSApp terminate:self];
 }
 
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification
@@ -229,31 +234,29 @@ bail:
     
     NSArray *mounted_images = [self listMountedDiskImages];
     if (! mounted_images) {
-        goto bail;
+        NSLog(@"No mounted disk images");
+        return;
     }
     NSArray *target_volumes = filterImageVolumes(filenames, mounted_images);
     if (![target_volumes count]) {
         NSLog(@"Can't find a image file corresponding to the selection");
-        goto bail;
+        return;
     }
     
     for (NSDictionary *mount_info in target_volumes) {
         CFDataRef bookmark_data = CFURLCreateBookmarkDataFromAliasRecord(kCFAllocatorDefault,
-                                                                         (CFDataRef)mount_info[@"image-alias"]);
+                                                                         (__bridge CFDataRef)mount_info[@"image-alias"]);
         Boolean isState;
         CFErrorRef error = NULL;
-        CFURLRef image_alias = CFURLCreateByResolvingBookmarkData(kCFAllocatorDefault, bookmark_data,
+        NSURL *image_alias = (__bridge_transfer NSURL *)CFURLCreateByResolvingBookmarkData(kCFAllocatorDefault, bookmark_data,
                                                                   0, NULL, NULL, &isState, &error);
         if (error) {
             CFShow(error);
-            goto bail;
+            return;
         }
-        NSString *image_path = [(NSURL *)image_alias path];
+        NSString *image_path = [image_alias path];
         [[NSWorkspace sharedWorkspace] selectFile:image_path inFileViewerRootedAtPath:@""];
     }
-	
-bail:
-    [NSApp terminate:self];
 }
 
 @end

@@ -1,8 +1,11 @@
 #import <Foundation/Foundation.h>
 
-@interface AppDelegate : NSObject {
-    IBOutlet id ASBridge;
-}
+@interface ASBridge : NSObject
+- (NSArray *)selectionInFinder;
+@end
 
+@interface AppDelegate : NSObject {
+    IBOutlet ASBridge *asBridgeInstance;
+}
 
 @end

@@ -3,7 +3,7 @@
 @implementation NSTask (SimpleTask)
 + (NSTask *)taskLaunchingWithPath:(NSString *)launchPath arguments:(NSArray *)args
 {
-    NSTask *a_task = [[self new] autorelease];
+    NSTask *a_task = [self new];
     [a_task setLaunchPath:launchPath];
     [a_task setArguments:args];
     [a_task setStandardOutput:[NSPipe pipe]];
@@ -16,16 +16,16 @@
 
 - (NSString *)stdoutString
 {
-    return [[[NSString alloc] initWithData:
+    return [[NSString alloc] initWithData:
                            [[[self standardOutput] fileHandleForReading] availableData]
-                                                encoding:NSUTF8StringEncoding] autorelease];
+                                                encoding:NSUTF8StringEncoding];
 }
 
 - (NSString *)stderrString
 {
-    return [[[NSString alloc] initWithData:
+    return [[NSString alloc] initWithData:
              [[[self standardError] fileHandleForReading] availableData]
-                                  encoding:NSUTF8StringEncoding] autorelease];
+                                  encoding:NSUTF8StringEncoding];
 }
 
 @end
