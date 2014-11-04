@@ -27,11 +27,14 @@ NSArray *filterImageVolumes(NSArray *fselection, NSArray *mounted_images)
     NSMutableArray *target_images = [NSMutableArray array];
     for (NSString *a_path in fselection) {
         for (NSDictionary *mount_info in mounted_images) {
-            NSString *mount_point = mount_info[@"system-entities"][0][@"mount-point"];
-            if ([a_path isEqualToString:mount_point]
-                    || [a_path hasPrefix:[mount_point stringByAppendingString:@"/"]]) {
-                [target_images addObject:mount_info];
-                break;
+            for (NSDictionary *sys_entity in mount_info[@"system-entities"]) {
+                NSString *mount_point = sys_entity[@"mount-point"];
+                if (mount_point &&
+                    ([a_path isEqualToString:mount_point] ||
+                       [a_path hasPrefix:[mount_point stringByAppendingString:@"/"]])) {
+                        [target_images addObject:mount_info];
+                        break;
+                }
             }
         }
     }
