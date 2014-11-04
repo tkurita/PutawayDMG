@@ -2,7 +2,7 @@
 #import "NSTask+SimpleTask.h"
 #import "DonationReminder/DonationReminder.h"
 
-#define useLog 1
+#define useLog 0
 
 typedef id(^MapBlock)(id);
 @interface NSArray (Map)
@@ -21,6 +21,17 @@ typedef id(^MapBlock)(id);
 
 @implementation AppDelegate
 
+NSString *findMountPoint(NSArray *systemEntities)
+{
+    NSString *mount_point = nil;
+    for (NSDictionary *sys_entity in systemEntities) {
+        NSString *mount_point = sys_entity[@"mount-point"];
+        if (mount_point) {
+                break;
+            }
+    }
+    return mount_point;
+}
 
 NSArray *filterImageVolumes(NSArray *fselection, NSArray *mounted_images)
 {
@@ -32,7 +43,10 @@ NSArray *filterImageVolumes(NSArray *fselection, NSArray *mounted_images)
                 if (mount_point &&
                     ([a_path isEqualToString:mount_point] ||
                        [a_path hasPrefix:[mount_point stringByAppendingString:@"/"]])) {
-                        [target_images addObject:mount_info];
+                        NSMutableDictionary *mount_info_mod = [mount_info mutableCopy];
+                        mount_info_mod[@"mount-point"] = mount_point;
+                        mount_info_mod[@"dev-entry"] = sys_entity[@"dev-entry"];
+                        [target_images addObject:mount_info_mod];
                         break;
                 }
             }
@@ -80,7 +94,7 @@ NSArray *filterImageVolumes(NSArray *fselection, NSArray *mounted_images)
         [open_panel setCanChooseDirectories:YES];
         [open_panel setCanChooseFiles:NO];
         NSDictionary *first_image = mntImages[0];
-        NSString *mount_point = first_image[@"system-entities"][0][@"mount-point"];
+        NSString *mount_point = findMountPoint(first_image[@"system-entities"]);
         [open_panel setDirectoryURL:[NSURL fileURLWithPath:mount_point]];
         [open_panel setPrompt:NSLocalizedString(@"Choose a disk of a disk image", @"button in chooser")];
         if ([open_panel runModal] == NSFileHandlingPanelCancelButton ) {
@@ -105,10 +119,10 @@ NSArray *filterImageVolumes(NSArray *fselection, NSArray *mounted_images)
     for (NSDictionary *mount_info in target_volumes) {
         NSUserNotification *unotification = [NSUserNotification new];
         unotification.title = NSLocalizedString(@"Detaching", @"notification");
-        NSString *mount_point = mount_info[@"system-entities"][0][@"mount-point"];
+        NSString *mount_point = mount_info[@"mount-point"];
         unotification.informativeText = mount_point;
         [uncenter deliverNotification:unotification];
-        NSString *dev_entry = mount_info[@"system-entities"][0][@"dev-entry"];
+        NSString *dev_entry = mount_info[@"dev-entry"];
         
         NSTask *detach_task = [self launchTaskWithWaiting:@"/usr/bin/hdiutil"
                                                 arguments:@[@"detach", dev_entry]];
@@ -222,6 +236,7 @@ bail:
     NSLog(@"Finder Selection : %@", fsel_array);
 #endif
     [self proceessWithSelection:fsel_array mountedImages:mounted_images];
+    [NSApp terminate:self];
 }
 
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification
