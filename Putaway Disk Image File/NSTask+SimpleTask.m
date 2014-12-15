@@ -1,6 +1,25 @@
 #import "NSTask+SimpleTask.h"
 
 @implementation NSTask (SimpleTask)
+
+- (void)readStdout
+{
+	NSMutableData *stdoutData = [NSMutableData new];
+	NSFileHandle *out_h = [[self standardOutput] fileHandleForReading];
+	while(1) {
+		//NSLog(@"will read");
+		NSData *data_out = [out_h availableData];
+		
+		if ([data_out length]) {
+			[stdoutData appendData:data_out];
+		} else {
+			break;
+		}
+	}
+	
+	[out_h closeFile];
+}
+
 + (NSTask *)taskLaunchingWithPath:(NSString *)launchPath arguments:(NSArray *)args
 {
     NSTask *a_task = [self new];
@@ -10,16 +29,38 @@
     [a_task setStandardError:[NSPipe pipe]];
     
     [a_task launch];
-    [a_task waitUntilExit];
+    //[a_task readStdout];
+    //[a_task waitUntilExit];
     return a_task;
 }
 
+
 - (NSString *)stdoutString
 {
-    return [[NSString alloc] initWithData:
-                           [[[self standardOutput] fileHandleForReading] availableData]
-                                                encoding:NSUTF8StringEncoding];
+
+	NSMutableData *stdoutData = [NSMutableData new];
+	NSFileHandle *out_h = [[self standardOutput] fileHandleForReading];
+	while(1) {
+		//NSLog(@"will read");
+		NSData *data_out = [out_h availableData];
+		
+		if ([data_out length]) {
+			[stdoutData appendData:data_out];
+		} else {
+			break;
+		}
+	}
+//	[self waitUntilExit];
+//    NSData *data_out = [out_h availableData];
+//    
+//    if ([data_out length]) {
+//        [stdoutData appendData:data_out];
+//    }
+    
+	[out_h closeFile];
+    return [[NSString alloc] initWithData:stdoutData encoding:NSUTF8StringEncoding];
 }
+
 
 - (NSString *)stderrString
 {

@@ -224,7 +224,10 @@ bail:
         return;
     }
     
-    if (![[user_info objectForKey:NSApplicationLaunchIsDefaultLaunchKey] boolValue]) return;
+    if (![[user_info objectForKey:NSApplicationLaunchIsDefaultLaunchKey] boolValue]) {
+        [NSApp terminate:self];
+        return;
+    }
     
     NSArray *mounted_images = [self listMountedDiskImages];
     if (! mounted_images) {
