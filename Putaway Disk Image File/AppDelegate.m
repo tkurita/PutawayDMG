@@ -225,7 +225,6 @@ bail:
     }
     
     if (![[user_info objectForKey:NSApplicationLaunchIsDefaultLaunchKey] boolValue]) {
-        [NSApp terminate:self];
         return;
     }
     
@@ -239,7 +238,6 @@ bail:
     NSLog(@"Finder Selection : %@", fsel_array);
 #endif
     [self proceessWithSelection:fsel_array mountedImages:mounted_images];
-    [NSApp terminate:self];
 }
 
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification
