@@ -20,6 +20,7 @@ typedef id(^MapBlock)(id);
 @end
 
 @implementation AppDelegate
+static BOOL ALREADY_LAUNCHED = NO;
 
 NSString *findMountPoint(NSArray *systemEntities)
 {
@@ -198,10 +199,20 @@ bail:
     NSArray *wins = [NSApp windows];
     // even a window of DonationReminder is remained, this method will be called.
     // then check visivility of all windows.
+#if useLog
+    NSLog(@"Number of windows : %d", [wins count]);
+#endif
     for (NSWindow *a_win in wins) {
         if ([a_win isVisible]) return NO;
     }
     return YES;
+}
+
+- (void)terminateIfNoWindows
+{
+    if ([self applicationShouldTerminateAfterLastWindowClosed:NSApp]) {
+        [NSApp terminate:self];
+    }
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
@@ -221,23 +232,43 @@ bail:
         NSLog(@"userInfo : %@", user_notification.userInfo);
 #endif
         [user_notification_center removeDeliveredNotification:user_notification];
-        return;
-    }
-    
-    if (![[user_info objectForKey:NSApplicationLaunchIsDefaultLaunchKey] boolValue]) {
-        return;
-    }
-    
-    NSArray *mounted_images = [self listMountedDiskImages];
-    if (! mounted_images) {
-        return;
-    }
-    
-    NSArray *fsel_array = [asBridgeInstance selectionInFinder];
+        ALREADY_LAUNCHED = YES;
+    } else if([[user_info objectForKey:NSApplicationLaunchIsDefaultLaunchKey] boolValue]) {
+        NSArray *mounted_images = [self listMountedDiskImages];
+        if (mounted_images) {
+            NSArray *fsel_array = [asBridgeInstance selectionInFinder];
+    #if useLog
+            NSLog(@"Finder Selection : %@", fsel_array);
+    #endif
+            if ([fsel_array count]) {
+                [self proceessWithSelection:fsel_array mountedImages:mounted_images];
+            }
+        }
+        ALREADY_LAUNCHED = YES;
+    } else {
+        // launched to open or print a file, to perform a Service action
+        NSAppleEventDescriptor *ev = [[NSAppleEventManager sharedAppleEventManager] currentAppleEvent];
+        switch ([ev eventID]) {
+            case kAEOpenDocuments:
 #if useLog
-    NSLog(@"Finder Selection : %@", fsel_array);
+                NSLog(@"kAEOpenDocuments");
 #endif
-    [self proceessWithSelection:fsel_array mountedImages:mounted_images];
+                break;
+            case kAEOpenApplication:
+#if useLog
+                NSLog(@"kAEOpenApplication");
+#endif
+                switch ([[ev paramDescriptorForKeyword:keyAEPropData] enumCodeValue]) {
+                    case keyAELaunchedAsLogInItem:
+                    case keyAELaunchedAsServiceItem:
+                        return;
+                }
+                break;
+        }
+    } 
+    
+    // for when the DonationReminder window is not opened.
+    [self terminateIfNoWindows];
 }
 
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification
@@ -287,6 +318,10 @@ bail:
         }
         NSString *image_path = [image_alias path];
         [[NSWorkspace sharedWorkspace] selectFile:image_path inFileViewerRootedAtPath:@""];
+    }
+    
+    if (!ALREADY_LAUNCHED) {
+        [self terminateIfNoWindows];
     }
 }
 
