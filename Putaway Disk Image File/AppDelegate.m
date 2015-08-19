@@ -26,7 +26,7 @@ NSString *findMountPoint(NSArray *systemEntities)
 {
     NSString *mount_point = nil;
     for (NSDictionary *sys_entity in systemEntities) {
-        NSString *mount_point = sys_entity[@"mount-point"];
+        mount_point = sys_entity[@"mount-point"];
         if (mount_point) {
                 break;
             }
@@ -65,7 +65,12 @@ NSArray *filterImageVolumes(NSArray *fselection, NSArray *mounted_images)
     [a_task setStandardError:[NSPipe pipe]];
     
     [a_task launch];
-    [a_task waitUntilExit];
+    /* 
+     When a target disk image is obtained by an open panel not seletion in Finder,
+     -waitUntilExit method cause unknown termination of this app.
+     Use simple loop instead of -waitUntilExit method.
+     */
+    while (a_task.isRunning) usleep(200);
     return a_task;
 }
 
@@ -91,19 +96,27 @@ NSArray *filterImageVolumes(NSArray *fselection, NSArray *mounted_images)
 {
     NSArray *target_volumes = filterImageVolumes(selection, mntImages);
     if (![target_volumes count]) {
-        NSOpenPanel *open_panel = [NSOpenPanel openPanel];
-        [open_panel setCanChooseDirectories:YES];
-        [open_panel setCanChooseFiles:NO];
-        NSDictionary *first_image = mntImages[0];
-        NSString *mount_point = findMountPoint(first_image[@"system-entities"]);
-        [open_panel setDirectoryURL:[NSURL fileURLWithPath:mount_point]];
-        [open_panel setPrompt:NSLocalizedString(@"Choose a disk of a disk image", @"button in chooser")];
-        if ([open_panel runModal] == NSFileHandlingPanelCancelButton ) {
-            return NO;
+        NSString *mount_point = nil;
+        for (NSDictionary *an_image in mntImages) {
+            mount_point = findMountPoint(an_image[@"system-entities"]);
+            if (mount_point) { // may some disk image is not mounted (ex. Flash Player updater)
+                break;
+            }
         }
-        NSArray *urls = [open_panel URLs];
-        NSArray *selected_items = [urls map:^id(NSURL *url) {return [url path];}];
-        target_volumes = filterImageVolumes(selected_items, mntImages);
+
+        if (mount_point) {
+            NSOpenPanel *open_panel = [NSOpenPanel openPanel];
+            [open_panel setCanChooseDirectories:YES];
+            [open_panel setCanChooseFiles:NO];        
+            [open_panel setDirectoryURL:[NSURL fileURLWithPath:mount_point]];
+            [open_panel setPrompt:NSLocalizedString(@"Choose a disk of a disk image", @"button in chooser")];
+            if ([open_panel runModal] == NSFileHandlingPanelCancelButton ) {
+                return NO;
+            }
+            NSArray *urls = [open_panel URLs];
+            NSArray *selected_items = [urls map:^id(NSURL *url) {return [url path];}];
+            target_volumes = filterImageVolumes(selected_items, mntImages);
+        }
     }
     
     if (![target_volumes count]) {
