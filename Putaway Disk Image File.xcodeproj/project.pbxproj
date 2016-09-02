@@ -3,16 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2C246AAC19E4204200A17ED3 /* NSTask+SimpleTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C246AAB19E4204200A17ED3 /* NSTask+SimpleTask.m */; };
 		2C3367DB19E390540070C838 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2B1A819DE6A0F00CDE9D2 /* main.m */; };
 		2C4A364619E648880031E521 /* DonationReminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C4A364419E6484C0031E521 /* DonationReminder.framework */; };
-		2C4A364819E648A40031E521 /* DonationReminder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2C4A364719E648A40031E521 /* DonationReminder.framework */; };
-		2CC2B19B19DE6A0F00CDE9D2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC2B19A19DE6A0F00CDE9D2 /* Cocoa.framework */; };
-		2CC2B19D19DE6A0F00CDE9D2 /* AppleScriptObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC2B19C19DE6A0F00CDE9D2 /* AppleScriptObjC.framework */; };
+		2C71B6471D79684A0001DC59 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C71B6461D79684A0001DC59 /* Cocoa.framework */; };
+		2C71B6491D79685A0001DC59 /* AppleScriptObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C71B6481D79685A0001DC59 /* AppleScriptObjC.framework */; };
+		2C71B64A1D7980070001DC59 /* DonationReminder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2C4A364419E6484C0031E521 /* DonationReminder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2CC2B1A719DE6A0F00CDE9D2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CC2B1A519DE6A0F00CDE9D2 /* InfoPlist.strings */; };
 		2CC2B1AD19DE6A0F00CDE9D2 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2CC2B1AB19DE6A0F00CDE9D2 /* Credits.rtf */; };
 		2CC2B1AF19DE6A0F00CDE9D2 /* ASBridge.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2B1AE19DE6A0F00CDE9D2 /* ASBridge.applescript */; };
@@ -30,7 +30,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2C4A364819E648A40031E521 /* DonationReminder.framework in CopyFiles */,
+				2C71B64A1D7980070001DC59 /* DonationReminder.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,14 +40,10 @@
 		2C246AAA19E4204200A17ED3 /* NSTask+SimpleTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTask+SimpleTask.h"; sourceTree = "<group>"; };
 		2C246AAB19E4204200A17ED3 /* NSTask+SimpleTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTask+SimpleTask.m"; sourceTree = "<group>"; };
 		2C4A364419E6484C0031E521 /* DonationReminder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DonationReminder.framework; sourceTree = "<group>"; };
-		2C4A364719E648A40031E521 /* DonationReminder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DonationReminder.framework; sourceTree = "<group>"; };
 		2C4A364919E64D7B0031E521 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2C71B6461D79684A0001DC59 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		2C71B6481D79685A0001DC59 /* AppleScriptObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptObjC.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/AppleScriptObjC.framework; sourceTree = DEVELOPER_DIR; };
 		2CC2B19719DE6A0F00CDE9D2 /* Putaway Disk Image File.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Putaway Disk Image File.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2CC2B19A19DE6A0F00CDE9D2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		2CC2B19C19DE6A0F00CDE9D2 /* AppleScriptObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptObjC.framework; path = System/Library/Frameworks/AppleScriptObjC.framework; sourceTree = SDKROOT; };
-		2CC2B19F19DE6A0F00CDE9D2 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		2CC2B1A019DE6A0F00CDE9D2 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		2CC2B1A119DE6A0F00CDE9D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2CC2B1A419DE6A0F00CDE9D2 /* Putaway Disk Image File-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Putaway Disk Image File-Info.plist"; sourceTree = "<group>"; };
 		2CC2B1A619DE6A0F00CDE9D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2CC2B1A819DE6A0F00CDE9D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -70,9 +66,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C71B6491D79685A0001DC59 /* AppleScriptObjC.framework in Frameworks */,
+				2C71B6471D79684A0001DC59 /* Cocoa.framework in Frameworks */,
 				2C4A364619E648880031E521 /* DonationReminder.framework in Frameworks */,
-				2CC2B19B19DE6A0F00CDE9D2 /* Cocoa.framework in Frameworks */,
-				2CC2B19D19DE6A0F00CDE9D2 /* AppleScriptObjC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,7 +79,6 @@
 			isa = PBXGroup;
 			children = (
 				2CC2B1A219DE6A0F00CDE9D2 /* Putaway Disk Image File */,
-				2C4A364719E648A40031E521 /* DonationReminder.framework */,
 				2CC2B19919DE6A0F00CDE9D2 /* Frameworks */,
 				2CC2B19819DE6A0F00CDE9D2 /* Products */,
 			);
@@ -100,9 +95,9 @@
 		2CC2B19919DE6A0F00CDE9D2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2C71B6481D79685A0001DC59 /* AppleScriptObjC.framework */,
+				2C71B6461D79684A0001DC59 /* Cocoa.framework */,
 				2C4A364419E6484C0031E521 /* DonationReminder.framework */,
-				2CC2B19A19DE6A0F00CDE9D2 /* Cocoa.framework */,
-				2CC2B19C19DE6A0F00CDE9D2 /* AppleScriptObjC.framework */,
 				2CC2B19E19DE6A0F00CDE9D2 /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -111,9 +106,6 @@
 		2CC2B19E19DE6A0F00CDE9D2 /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2CC2B19F19DE6A0F00CDE9D2 /* AppKit.framework */,
-				2CC2B1A019DE6A0F00CDE9D2 /* CoreData.framework */,
-				2CC2B1A119DE6A0F00CDE9D2 /* Foundation.framework */,
 			);
 			name = "Other Frameworks";
 			sourceTree = "<group>";
@@ -179,7 +171,7 @@
 				ORGANIZATIONNAME = "栗田 哲郎";
 			};
 			buildConfigurationList = 2CC2B19219DE6A0F00CDE9D2 /* Build configuration list for PBXProject "Putaway Disk Image File" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -330,7 +322,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx10.11;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -357,7 +349,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx10.11;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

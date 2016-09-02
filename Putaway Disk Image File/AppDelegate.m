@@ -228,6 +228,22 @@ bail:
     }
 }
 
+
+- (void)preformPutawaySelection
+{
+    NSArray *mounted_images = [self listMountedDiskImages];
+    if (mounted_images) {
+        NSArray *fsel_array = [asBridgeInstance selectionInFinder];
+#if useLog
+        NSLog(@"Finder Selection : %@", fsel_array);
+#endif
+        if ([fsel_array count]) {
+            [self proceessWithSelection:fsel_array mountedImages:mounted_images];
+        }
+    }
+    ALREADY_LAUNCHED = YES;
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
 #if useLog
@@ -236,8 +252,12 @@ bail:
     NSUserNotificationCenter *user_notification_center = [NSUserNotificationCenter defaultUserNotificationCenter];
     //[user_notification_center setDelegate:self];
 	[DonationReminder remindDonation];
+
     
     NSDictionary *user_info = aNotification.userInfo;
+#if useLog
+    NSLog(@"aNotification.userInfo : %@", user_info);
+#endif
     NSUserNotification *user_notification = [user_info objectForKey:NSApplicationLaunchUserNotificationKey];
     if (user_notification) {
 #if useLog
@@ -247,20 +267,12 @@ bail:
         [user_notification_center removeDeliveredNotification:user_notification];
         ALREADY_LAUNCHED = YES;
     } else if([[user_info objectForKey:NSApplicationLaunchIsDefaultLaunchKey] boolValue]) {
-        NSArray *mounted_images = [self listMountedDiskImages];
-        if (mounted_images) {
-            NSArray *fsel_array = [asBridgeInstance selectionInFinder];
-    #if useLog
-            NSLog(@"Finder Selection : %@", fsel_array);
-    #endif
-            if ([fsel_array count]) {
-                [self proceessWithSelection:fsel_array mountedImages:mounted_images];
-            }
-        }
-        ALREADY_LAUNCHED = YES;
+        // sometime NSApplicationLaunchIsDefaultLaunchKey is NO, even if AppleEvent is kAEOpenApplication.
+        [self preformPutawaySelection];
     } else {
         // launched to open or print a file, to perform a Service action
         NSAppleEventDescriptor *ev = [[NSAppleEventManager sharedAppleEventManager] currentAppleEvent];
+        NSAppleEventDescriptor *prop_data;
         switch ([ev eventID]) {
             case kAEOpenDocuments:
 #if useLog
@@ -269,12 +281,17 @@ bail:
                 break;
             case kAEOpenApplication:
 #if useLog
-                NSLog(@"kAEOpenApplication");
+                NSLog(@"kAEOpenApplication : %@", [ev paramDescriptorForKeyword:keyAEPropData]);
 #endif
-                switch ([[ev paramDescriptorForKeyword:keyAEPropData] enumCodeValue]) {
-                    case keyAELaunchedAsLogInItem:
-                    case keyAELaunchedAsServiceItem:
-                        return;
+                prop_data = [ev paramDescriptorForKeyword:keyAEPropData];
+                if (prop_data) {
+                    switch([prop_data enumCodeValue]) {
+                        case keyAELaunchedAsLogInItem:
+                        case keyAELaunchedAsServiceItem:
+                            return;
+                    }
+                } else {
+                    [self preformPutawaySelection];
                 }
                 break;
         }
