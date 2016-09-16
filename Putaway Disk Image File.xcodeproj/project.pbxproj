@@ -21,6 +21,8 @@
 		2CC39C8519E66872001384E2 /* ServicesMenu.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CC39C8719E66872001384E2 /* ServicesMenu.strings */; };
 		2CC39C8B19E66C9B001384E2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CC39C8D19E66C9B001384E2 /* Localizable.strings */; };
 		2CC39C9319E67252001384E2 /* MainMenu.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CC39C9119E67252001384E2 /* MainMenu.strings */; };
+		2CE3D5351D8B80E00010B3C8 /* Putaway-Disk-Image-File-Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2CE3D5341D8B80E00010B3C8 /* Putaway-Disk-Image-File-Icon.icns */; };
+		2CE3D5371D8B81400010B3C8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CE3D5361D8B81400010B3C8 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -59,6 +61,9 @@
 		2CC39C8E19E66C9C001384E2 /* ja */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2CC39C8F19E66EDA001384E2 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		2CC39C9219E67252001384E2 /* ja */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		2CE3D5341D8B80E00010B3C8 /* Putaway-Disk-Image-File-Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "Putaway-Disk-Image-File-Icon.icns"; sourceTree = "<group>"; };
+		2CE3D5361D8B81400010B3C8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2CF36BE11D79A2B1005C56DE /* History.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = History.md; path = ../History.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +83,7 @@
 		2CC2B18E19DE6A0F00CDE9D2 = {
 			isa = PBXGroup;
 			children = (
+				2CF36BE11D79A2B1005C56DE /* History.md */,
 				2CC2B1A219DE6A0F00CDE9D2 /* Putaway Disk Image File */,
 				2CC2B19919DE6A0F00CDE9D2 /* Frameworks */,
 				2CC2B19819DE6A0F00CDE9D2 /* Products */,
@@ -119,6 +125,7 @@
 				2CC2B1B819DE6AE200CDE9D2 /* AppDelegate.h */,
 				2CC2B1B919DE6AE200CDE9D2 /* AppDelegate.m */,
 				2CC2B1B019DE6A1000CDE9D2 /* MainMenu.xib */,
+				2CE3D5361D8B81400010B3C8 /* Images.xcassets */,
 				2CC2B1A319DE6A0F00CDE9D2 /* Supporting Files */,
 			);
 			path = "Putaway Disk Image File";
@@ -127,6 +134,7 @@
 		2CC2B1A319DE6A0F00CDE9D2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2CE3D5341D8B80E00010B3C8 /* Putaway-Disk-Image-File-Icon.icns */,
 				2CC39C9119E67252001384E2 /* MainMenu.strings */,
 				2CC2B1A419DE6A0F00CDE9D2 /* Putaway Disk Image File-Info.plist */,
 				2CC2B1A519DE6A0F00CDE9D2 /* InfoPlist.strings */,
@@ -169,6 +177,11 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "栗田 哲郎";
+				TargetAttributes = {
+					2CC2B19619DE6A0F00CDE9D2 = {
+						DevelopmentTeam = 5VBC6385DN;
+					};
+				};
 			};
 			buildConfigurationList = 2CC2B19219DE6A0F00CDE9D2 /* Build configuration list for PBXProject "Putaway Disk Image File" */;
 			compatibilityVersion = "Xcode 6.3";
@@ -194,9 +207,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CC2B1A719DE6A0F00CDE9D2 /* InfoPlist.strings in Resources */,
+				2CE3D5371D8B81400010B3C8 /* Images.xcassets in Resources */,
 				2CC2B1AD19DE6A0F00CDE9D2 /* Credits.rtf in Resources */,
 				2CC2B1B219DE6A1000CDE9D2 /* MainMenu.xib in Resources */,
 				2CC39C8519E66872001384E2 /* ServicesMenu.strings in Resources */,
+				2CE3D5351D8B80E00010B3C8 /* Putaway-Disk-Image-File-Icon.icns in Resources */,
 				2CC39C8B19E66C9B001384E2 /* Localizable.strings in Resources */,
 				2CC39C9319E67252001384E2 /* MainMenu.strings in Resources */,
 			);
@@ -306,7 +321,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -340,7 +355,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -358,6 +373,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -367,6 +383,7 @@
 				GCC_PREFIX_HEADER = "Putaway Disk Image File/Putaway Disk Image File-Prefix.pch";
 				INFOPLIST_FILE = "Putaway Disk Image File/Putaway Disk Image File-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.Putaway-Disk-Image-File";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
@@ -377,6 +394,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -386,6 +404,7 @@
 				GCC_PREFIX_HEADER = "Putaway Disk Image File/Putaway Disk Image File-Prefix.pch";
 				INFOPLIST_FILE = "Putaway Disk Image File/Putaway Disk Image File-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.Putaway-Disk-Image-File";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
