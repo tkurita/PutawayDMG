@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "47CDB44DE77D0E3F25ED3477FE980BCA2F754E94",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "47CDB44DE77D0E3F25ED3477FE980BCA2F754E94" : 0,
+    "CE36F82523B22864817A69C07793460FD966B4B4" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "A56E2798-E8E4-4D93-ABE8-41B990A82AD8",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "47CDB44DE77D0E3F25ED3477FE980BCA2F754E94" : "Putaway%20Disk%20Image%20File\/",
+    "CE36F82523B22864817A69C07793460FD966B4B4" : "..\/MergePDF\/MergePDF"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Putaway Disk Image File",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Putaway Disk Image File.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/tkurita\/Putaway-Disk-Image-File.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "47CDB44DE77D0E3F25ED3477FE980BCA2F754E94"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/tkurita\/MergePDF.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "CE36F82523B22864817A69C07793460FD966B4B4"
+    }
+  ]
+}
