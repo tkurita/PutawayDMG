@@ -83,7 +83,6 @@
 		2CC39C8E19E66C9C001384E2 /* ja */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2CC39C9219E67252001384E2 /* ja */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		2CE3D5341D8B80E00010B3C8 /* Putaway-Disk-Image-File-Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "Putaway-Disk-Image-File-Icon.icns"; sourceTree = "<group>"; };
-		2CE3D5361D8B81400010B3C8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2CF36BE11D79A2B1005C56DE /* History.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = History.md; path = ../History.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -158,7 +157,6 @@
 				2CC2B1B819DE6AE200CDE9D2 /* AppDelegate.h */,
 				2CC2B1B919DE6AE200CDE9D2 /* AppDelegate.m */,
 				2CC2B1B019DE6A1000CDE9D2 /* MainMenu.xib */,
-				2CE3D5361D8B81400010B3C8 /* Images.xcassets */,
 				2CC2B1A319DE6A0F00CDE9D2 /* Supporting Files */,
 			);
 			path = "Putaway Disk Image File";
@@ -418,7 +416,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -452,7 +450,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
