@@ -1,6 +1,6 @@
 #import "AppDelegate.h"
 #import "NSTask+SimpleTask.h"
-#import "DonationReminder/DonationReminder.h"
+#import "../DonationReminder/DonationReminder.h"
 
 #define useLog 0
 

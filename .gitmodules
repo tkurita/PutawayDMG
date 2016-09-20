@@ -1,0 +1,3 @@
+[submodule "DonationReminder"]
+	path = DonationReminder
+	url = https://github.com/tkurita/DonationReminder.git
