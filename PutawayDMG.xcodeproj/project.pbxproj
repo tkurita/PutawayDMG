@@ -114,7 +114,7 @@
 			children = (
 				2C6091131D9146DE00EEC1A9 /* Podfile */,
 				2CF36BE11D79A2B1005C56DE /* History.md */,
-				2CC2B1A219DE6A0F00CDE9D2 /* Putaway Disk Image File */,
+				2CC2B1A219DE6A0F00CDE9D2 /* PutawayDMG */,
 				2CC2B19919DE6A0F00CDE9D2 /* Frameworks */,
 				2CC2B19819DE6A0F00CDE9D2 /* Products */,
 				68BC6E5BD4589FBB0F2043CB /* Pods */,
@@ -148,7 +148,7 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		2CC2B1A219DE6A0F00CDE9D2 /* Putaway Disk Image File */ = {
+		2CC2B1A219DE6A0F00CDE9D2 /* PutawayDMG */ = {
 			isa = PBXGroup;
 			children = (
 				2C246AAA19E4204200A17ED3 /* NSTask+SimpleTask.h */,
@@ -159,7 +159,7 @@
 				2CC2B1B019DE6A1000CDE9D2 /* MainMenu.xib */,
 				2CC2B1A319DE6A0F00CDE9D2 /* Supporting Files */,
 			);
-			path = "Putaway Disk Image File";
+			path = PutawayDMG;
 			sourceTree = "<group>";
 		};
 		2CC2B1A319DE6A0F00CDE9D2 /* Supporting Files */ = {
