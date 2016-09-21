@@ -1,10 +1,10 @@
-Putaway Disk Image File
+PutawayDMG
 ===============
-Putaway Disk Image File detach mounted disk image and move the disk image file into the trash.
+PutawayDMG detach mounted disk image and move the disk image file into the trash.
 
 ## Usage
 Japanese :
-* http://www.script-factory.net/software/misc/PutawayDiskImageFile/index.html
+* http://www.script-factory.net/software/misc/PutawayDMG/index.html
 
 ## Building
 Reqirements :
