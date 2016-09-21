@@ -16,9 +16,9 @@
                   <BuildableReference
                      BuildableIdentifier = "primary"
                      BlueprintIdentifier = "2CC2B19619DE6A0F00CDE9D2"
-                     BuildableName = "Putaway Disk Image File.app"
-                     BlueprintName = "Putaway Disk Image File"
-                     ReferencedContainer = "container:Putaway Disk Image File.xcodeproj">
+                     BuildableName = "PutawayDMG.app"
+                     BlueprintName = "PutawayDMG"
+                     ReferencedContainer = "container:PutawayDMG.xcodeproj">
                   </BuildableReference>
                </EnvironmentBuildable>
             </ActionContent>
@@ -34,9 +34,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2CC2B19619DE6A0F00CDE9D2"
-               BuildableName = "Putaway Disk Image File.app"
-               BlueprintName = "Putaway Disk Image File"
-               ReferencedContainer = "container:Putaway Disk Image File.xcodeproj">
+               BuildableName = "PutawayDMG.app"
+               BlueprintName = "PutawayDMG"
+               ReferencedContainer = "container:PutawayDMG.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -52,9 +52,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2CC2B19619DE6A0F00CDE9D2"
-            BuildableName = "Putaway Disk Image File.app"
-            BlueprintName = "Putaway Disk Image File"
-            ReferencedContainer = "container:Putaway Disk Image File.xcodeproj">
+            BuildableName = "PutawayDMG.app"
+            BlueprintName = "PutawayDMG"
+            ReferencedContainer = "container:PutawayDMG.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2CC2B19619DE6A0F00CDE9D2"
-            BuildableName = "Putaway Disk Image File.app"
-            BlueprintName = "Putaway Disk Image File"
-            ReferencedContainer = "container:Putaway Disk Image File.xcodeproj">
+            BuildableName = "PutawayDMG.app"
+            BlueprintName = "PutawayDMG"
+            ReferencedContainer = "container:PutawayDMG.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2CC2B19619DE6A0F00CDE9D2"
-            BuildableName = "Putaway Disk Image File.app"
-            BlueprintName = "Putaway Disk Image File"
-            ReferencedContainer = "container:Putaway Disk Image File.xcodeproj">
+            BuildableName = "PutawayDMG.app"
+            BlueprintName = "PutawayDMG"
+            ReferencedContainer = "container:PutawayDMG.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

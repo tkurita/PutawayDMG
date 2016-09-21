@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Putaway Disk Image File.xcodeproj">
+      location = "group:/Users/tkurita/Dev/Projects/Putaway-Disk-Image-File/Putaway Disk Image File/PutawayDMG.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

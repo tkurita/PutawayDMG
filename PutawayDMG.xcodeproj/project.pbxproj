@@ -68,11 +68,11 @@
 		2C6091211D9153D700EEC1A9 /* DonationReminder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DonationReminder.xcodeproj; path = DonationReminder/DonationReminder.xcodeproj; sourceTree = "<group>"; };
 		2C71B6461D79684A0001DC59 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		2C71B6481D79685A0001DC59 /* AppleScriptObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptObjC.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/AppleScriptObjC.framework; sourceTree = DEVELOPER_DIR; };
-		2CC2B19719DE6A0F00CDE9D2 /* Putaway Disk Image File.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Putaway Disk Image File.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2CC2B1A419DE6A0F00CDE9D2 /* Putaway Disk Image File-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Putaway Disk Image File-Info.plist"; sourceTree = "<group>"; };
+		2CC2B19719DE6A0F00CDE9D2 /* PutawayDMG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PutawayDMG.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CC2B1A419DE6A0F00CDE9D2 /* PutawayDMG-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PutawayDMG-Info.plist"; sourceTree = "<group>"; };
 		2CC2B1A619DE6A0F00CDE9D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2CC2B1A819DE6A0F00CDE9D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2CC2B1AA19DE6A0F00CDE9D2 /* Putaway Disk Image File-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Putaway Disk Image File-Prefix.pch"; sourceTree = "<group>"; };
+		2CC2B1AA19DE6A0F00CDE9D2 /* PutawayDMG-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PutawayDMG-Prefix.pch"; sourceTree = "<group>"; };
 		2CC2B1AC19DE6A0F00CDE9D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		2CC2B1AE19DE6A0F00CDE9D2 /* ASBridge.applescript */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.applescript; path = ASBridge.applescript; sourceTree = "<group>"; };
 		2CC2B1B819DE6AE200CDE9D2 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 		2CC2B19819DE6A0F00CDE9D2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2CC2B19719DE6A0F00CDE9D2 /* Putaway Disk Image File.app */,
+				2CC2B19719DE6A0F00CDE9D2 /* PutawayDMG.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -167,10 +167,10 @@
 			children = (
 				2CE3D5341D8B80E00010B3C8 /* Putaway-Disk-Image-File-Icon.icns */,
 				2CC39C9119E67252001384E2 /* MainMenu.strings */,
-				2CC2B1A419DE6A0F00CDE9D2 /* Putaway Disk Image File-Info.plist */,
+				2CC2B1A419DE6A0F00CDE9D2 /* PutawayDMG-Info.plist */,
 				2CC2B1A519DE6A0F00CDE9D2 /* InfoPlist.strings */,
 				2CC2B1A819DE6A0F00CDE9D2 /* main.m */,
-				2CC2B1AA19DE6A0F00CDE9D2 /* Putaway Disk Image File-Prefix.pch */,
+				2CC2B1AA19DE6A0F00CDE9D2 /* PutawayDMG-Prefix.pch */,
 				2CC2B1AB19DE6A0F00CDE9D2 /* Credits.rtf */,
 				2CC39C8719E66872001384E2 /* ServicesMenu.strings */,
 				2CC39C8D19E66C9B001384E2 /* Localizable.strings */,
@@ -190,9 +190,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2CC2B19619DE6A0F00CDE9D2 /* Putaway Disk Image File */ = {
+		2CC2B19619DE6A0F00CDE9D2 /* PutawayDMG */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2CC2B1B519DE6A1000CDE9D2 /* Build configuration list for PBXNativeTarget "Putaway Disk Image File" */;
+			buildConfigurationList = 2CC2B1B519DE6A1000CDE9D2 /* Build configuration list for PBXNativeTarget "PutawayDMG" */;
 			buildPhases = (
 				C2C98B0A6989C8104F32ECB1 /* [CP] Check Pods Manifest.lock */,
 				2CC2B19319DE6A0F00CDE9D2 /* Sources */,
@@ -207,9 +207,9 @@
 			dependencies = (
 				2C6091281D9153E700EEC1A9 /* PBXTargetDependency */,
 			);
-			name = "Putaway Disk Image File";
+			name = PutawayDMG;
 			productName = "Putaway Disk Image File";
-			productReference = 2CC2B19719DE6A0F00CDE9D2 /* Putaway Disk Image File.app */;
+			productReference = 2CC2B19719DE6A0F00CDE9D2 /* PutawayDMG.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -226,7 +226,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2CC2B19219DE6A0F00CDE9D2 /* Build configuration list for PBXProject "Putaway Disk Image File" */;
+			buildConfigurationList = 2CC2B19219DE6A0F00CDE9D2 /* Build configuration list for PBXProject "PutawayDMG" */;
 			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -246,7 +246,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				2CC2B19619DE6A0F00CDE9D2 /* Putaway Disk Image File */,
+				2CC2B19619DE6A0F00CDE9D2 /* PutawayDMG */,
 			);
 		};
 /* End PBXProject section */
@@ -477,11 +477,11 @@
 					"$(PROJECT_DIR)/DonationReminder/build/Debug",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Putaway Disk Image File/Putaway Disk Image File-Prefix.pch";
-				INFOPLIST_FILE = "Putaway Disk Image File/Putaway Disk Image File-Info.plist";
+				GCC_PREFIX_HEADER = "Putaway Disk Image File/PutawayDMG-Prefix.pch";
+				INFOPLIST_FILE = "Putaway Disk Image File/PutawayDMG-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.Putaway-Disk-Image-File";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.PutawayDMG";
+				PRODUCT_NAME = PutawayDMG;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
@@ -500,11 +500,11 @@
 					"$(PROJECT_DIR)/DonationReminder/build/Debug",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Putaway Disk Image File/Putaway Disk Image File-Prefix.pch";
-				INFOPLIST_FILE = "Putaway Disk Image File/Putaway Disk Image File-Info.plist";
+				GCC_PREFIX_HEADER = "Putaway Disk Image File/PutawayDMG-Prefix.pch";
+				INFOPLIST_FILE = "Putaway Disk Image File/PutawayDMG-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.Putaway-Disk-Image-File";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.PutawayDMG";
+				PRODUCT_NAME = PutawayDMG;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
@@ -513,7 +513,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2CC2B19219DE6A0F00CDE9D2 /* Build configuration list for PBXProject "Putaway Disk Image File" */ = {
+		2CC2B19219DE6A0F00CDE9D2 /* Build configuration list for PBXProject "PutawayDMG" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2CC2B1B319DE6A1000CDE9D2 /* Debug */,
@@ -522,7 +522,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2CC2B1B519DE6A1000CDE9D2 /* Build configuration list for PBXNativeTarget "Putaway Disk Image File" */ = {
+		2CC2B1B519DE6A1000CDE9D2 /* Build configuration list for PBXNativeTarget "PutawayDMG" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2CC2B1B619DE6A1000CDE9D2 /* Debug */,
