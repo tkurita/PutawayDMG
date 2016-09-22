@@ -355,4 +355,9 @@ bail:
     }
 }
 
+- (IBAction)makeDonation:(id)sender
+{
+    [DonationReminder goToDonation];
+}
+
 @end

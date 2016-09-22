@@ -2,14 +2,14 @@
 /* Class = "NSMenu"; title = "AMainMenu"; ObjectID = "29"; */
 "29.title" = "AMainMenu";
 
-/* Class = "NSMenuItem"; title = "Putaway Disk Image File"; ObjectID = "56"; */
-"56.title" = "Putaway Disk Image File";
+/* Class = "NSMenuItem"; title = "PutawayDMG"; ObjectID = "56"; */
+"56.title" = "PutawayDMG";
 
-/* Class = "NSMenu"; title = "Putaway Disk Image File"; ObjectID = "57"; */
-"57.title" = "Putaway Disk Image File";
+/* Class = "NSMenu"; title = "PutawayDMG"; ObjectID = "57"; */
+"57.title" = "PutawayDMG";
 
-/* Class = "NSMenuItem"; title = "Putaway Disk Image File について"; ObjectID = "58"; */
-"58.title" = "Putaway Disk Image File について";
+/* Class = "NSMenuItem"; title = "PutawayDMG について"; ObjectID = "58"; */
+"58.title" = "PutawayDMG について";
 
 /* Class = "NSMenuItem"; title = "開く..."; ObjectID = "72"; */
 "72.title" = "開く...";
@@ -44,11 +44,11 @@
 /* Class = "NSMenuItem"; title = "サービス"; ObjectID = "131"; */
 "131.title" = "サービス";
 
-/* Class = "NSMenuItem"; title = "Putaway Disk Image File を隠す"; ObjectID = "134"; */
-"134.title" = "Putaway Disk Image File を隠す";
+/* Class = "NSMenuItem"; title = "PutawayDMG を隠す"; ObjectID = "134"; */
+"134.title" = "PutawayDMG を隠す";
 
-/* Class = "NSMenuItem"; title = "Putaway Disk Image File を終了"; ObjectID = "136"; */
-"136.title" = "Putaway Disk Image File を終了";
+/* Class = "NSMenuItem"; title = "PutawayDMG を終了"; ObjectID = "136"; */
+"136.title" = "PutawayDMG を終了";
 
 /* Class = "NSMenuItem"; title = "ほかを隠す"; ObjectID = "145"; */
 "145.title" = "ほかを隠す";
@@ -92,5 +92,11 @@
 /* Class = "NSMenu"; title = "ヘルプ"; ObjectID = "491"; */
 "491.title" = "ヘルプ";
 
-/* Class = "NSMenuItem"; title = "Putaway Disk Image File ヘルプ"; ObjectID = "492"; */
-"492.title" = "Putaway Disk Image File ヘルプ";
+/* Class = "NSMenuItem"; title = "PutawayDMG Help"; ObjectID = "492"; */
+"492.title" = "PutawayDMG ヘルプ";
+
+/* Class = "NSMenuItem"; title = "Make a Donation"; ObjectID = "KVM-ea-ieq"; */
+"KVM-ea-ieq.title" = "寄付する";
+
+/* Class = "NSMenuItem"; title = "Check for Updates..."; ObjectID = "Plg-RV-hG2"; */
+"Plg-RV-hG2.title" = "アップデートを確認...";

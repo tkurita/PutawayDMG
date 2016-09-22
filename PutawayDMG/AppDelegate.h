@@ -8,4 +8,5 @@
     IBOutlet ASBridge *asBridgeInstance;
 }
 
+- (IBAction)makeDonation:(id)sender;
 @end
