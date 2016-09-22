@@ -7,44 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3D497493D788B5423064986CA6C4C244 /* Pods-Putaway Disk Image File-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F70985FCE5CB2FF1510BDEC5DCD410 /* Pods-Putaway Disk Image File-dummy.m */; };
-		B492BBF1A510D264078DE04CE17697B9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CA6EBC2E57D96052268211209D6AA52 /* Cocoa.framework */; };
+		82719FDCBFB715D49973F40CAF1FAB4F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CA6EBC2E57D96052268211209D6AA52 /* Cocoa.framework */; };
+		B36C855273635218BBD7BCB770AD91C6 /* Pods-PutawayDMG-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 75016EC8E122FF6014A1F41B28E1549F /* Pods-PutawayDMG-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		11F70985FCE5CB2FF1510BDEC5DCD410 /* Pods-Putaway Disk Image File-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Putaway Disk Image File-dummy.m"; sourceTree = "<group>"; };
+		0BD389614E1FE7ACAF1CA9D3D5084FA0 /* Pods-PutawayDMG.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PutawayDMG.debug.xcconfig"; sourceTree = "<group>"; };
+		1646F8B7E53C32A04F5498840422DB6F /* libPods-PutawayDMG.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PutawayDMG.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CA6EBC2E57D96052268211209D6AA52 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
-		2B8D540003D0D3C64B3226C2F0E99863 /* libPods-Putaway Disk Image File.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Putaway Disk Image File.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		55F13F7D2336A7B380B485507F263073 /* Pods-Putaway Disk Image File-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Putaway Disk Image File-frameworks.sh"; sourceTree = "<group>"; };
-		6052E11A020FEDE7DFBD8BF6BC7F0DF6 /* Pods-Putaway Disk Image File-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Putaway Disk Image File-acknowledgements.plist"; sourceTree = "<group>"; };
-		730D563C4423C0E925526273D99FF436 /* Pods-Putaway Disk Image File.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Putaway Disk Image File.release.xcconfig"; sourceTree = "<group>"; };
-		875A00A311D296CEA7971C9105646AB6 /* Pods-Putaway Disk Image File-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Putaway Disk Image File-acknowledgements.markdown"; sourceTree = "<group>"; };
+		2C551458A7E193912FFD8679C2F58058 /* Pods-PutawayDMG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PutawayDMG.release.xcconfig"; sourceTree = "<group>"; };
+		3E8EF6AD0D8910B3EBA731715B394A05 /* Pods-PutawayDMG-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PutawayDMG-acknowledgements.plist"; sourceTree = "<group>"; };
+		75016EC8E122FF6014A1F41B28E1549F /* Pods-PutawayDMG-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PutawayDMG-dummy.m"; sourceTree = "<group>"; };
+		7FAC16964BA076AB3B2B36646DA5E5CF /* Pods-PutawayDMG-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PutawayDMG-acknowledgements.markdown"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		B8D10EB197BF4A6121558432809BFD41 /* Pods-Putaway Disk Image File-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Putaway Disk Image File-resources.sh"; sourceTree = "<group>"; };
-		CD41CF7E5A6A6C5588C55A891DF30079 /* Pods-Putaway Disk Image File.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Putaway Disk Image File.debug.xcconfig"; sourceTree = "<group>"; };
+		A33AA2B0A3F15EB45F4A503AFABA4B35 /* Pods-PutawayDMG-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PutawayDMG-resources.sh"; sourceTree = "<group>"; };
+		CC86D062C486F234673A118885F64C28 /* Pods-PutawayDMG-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PutawayDMG-frameworks.sh"; sourceTree = "<group>"; };
 		FCCD3866C838F21B08E660964D16649C /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		DC0110E2F41E868F09EBEA989E179F00 /* Frameworks */ = {
+		889CE87E6392E1D7B81AFD2D18B2EE4C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B492BBF1A510D264078DE04CE17697B9 /* Cocoa.framework in Frameworks */,
+				82719FDCBFB715D49973F40CAF1FAB4F /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		07285150291BBC884114CC150DA491AA /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				EE8F4361B824D3854630183B20CE20B9 /* Pods-Putaway Disk Image File */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
 		28C17CEF104526ACA07B6EEE217EC43E /* OS X */ = {
 			isa = PBXGroup;
 			children = (
@@ -59,6 +51,14 @@
 				28C17CEF104526ACA07B6EEE217EC43E /* OS X */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3F093144532D8124D7381D5BC2552BD7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1646F8B7E53C32A04F5498840422DB6F /* libPods-PutawayDMG.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		4A56FAB52AD84EBB923847B5DF66F8AA /* Sparkle */ = {
@@ -83,8 +83,8 @@
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				39E9EE8210D861DFD82346C1F5EB7218 /* Frameworks */,
 				7DF15613CC41FF6B0DF506AA8851F77E /* Pods */,
-				D0FA072FE9BEA6CC239ECC6CA8A246C4 /* Products */,
-				07285150291BBC884114CC150DA491AA /* Targets Support Files */,
+				3F093144532D8124D7381D5BC2552BD7 /* Products */,
+				E693B9C55501205D653CCCD2C752A113 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,46 +96,46 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		D0FA072FE9BEA6CC239ECC6CA8A246C4 /* Products */ = {
+		B863749C870CCA169BEEEBFA391F3085 /* Pods-PutawayDMG */ = {
 			isa = PBXGroup;
 			children = (
-				2B8D540003D0D3C64B3226C2F0E99863 /* libPods-Putaway Disk Image File.a */,
+				7FAC16964BA076AB3B2B36646DA5E5CF /* Pods-PutawayDMG-acknowledgements.markdown */,
+				3E8EF6AD0D8910B3EBA731715B394A05 /* Pods-PutawayDMG-acknowledgements.plist */,
+				75016EC8E122FF6014A1F41B28E1549F /* Pods-PutawayDMG-dummy.m */,
+				CC86D062C486F234673A118885F64C28 /* Pods-PutawayDMG-frameworks.sh */,
+				A33AA2B0A3F15EB45F4A503AFABA4B35 /* Pods-PutawayDMG-resources.sh */,
+				0BD389614E1FE7ACAF1CA9D3D5084FA0 /* Pods-PutawayDMG.debug.xcconfig */,
+				2C551458A7E193912FFD8679C2F58058 /* Pods-PutawayDMG.release.xcconfig */,
 			);
-			name = Products;
+			name = "Pods-PutawayDMG";
+			path = "Target Support Files/Pods-PutawayDMG";
 			sourceTree = "<group>";
 		};
-		EE8F4361B824D3854630183B20CE20B9 /* Pods-Putaway Disk Image File */ = {
+		E693B9C55501205D653CCCD2C752A113 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				875A00A311D296CEA7971C9105646AB6 /* Pods-Putaway Disk Image File-acknowledgements.markdown */,
-				6052E11A020FEDE7DFBD8BF6BC7F0DF6 /* Pods-Putaway Disk Image File-acknowledgements.plist */,
-				11F70985FCE5CB2FF1510BDEC5DCD410 /* Pods-Putaway Disk Image File-dummy.m */,
-				55F13F7D2336A7B380B485507F263073 /* Pods-Putaway Disk Image File-frameworks.sh */,
-				B8D10EB197BF4A6121558432809BFD41 /* Pods-Putaway Disk Image File-resources.sh */,
-				CD41CF7E5A6A6C5588C55A891DF30079 /* Pods-Putaway Disk Image File.debug.xcconfig */,
-				730D563C4423C0E925526273D99FF436 /* Pods-Putaway Disk Image File.release.xcconfig */,
+				B863749C870CCA169BEEEBFA391F3085 /* Pods-PutawayDMG */,
 			);
-			name = "Pods-Putaway Disk Image File";
-			path = "Target Support Files/Pods-Putaway Disk Image File";
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		752D91AFA6BE068C9F03849E65A3E118 /* Pods-Putaway Disk Image File */ = {
+		D255CBF4319E9C4756826DC772EA10BE /* Pods-PutawayDMG */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9644B9B198C250E57ACAF53710D6C1E4 /* Build configuration list for PBXNativeTarget "Pods-Putaway Disk Image File" */;
+			buildConfigurationList = 08B192D5C940C122435DB37BE229C8FF /* Build configuration list for PBXNativeTarget "Pods-PutawayDMG" */;
 			buildPhases = (
-				AF7DA69786E27DD528C38DCAEBE32B47 /* Sources */,
-				DC0110E2F41E868F09EBEA989E179F00 /* Frameworks */,
+				E518863F96BA010029ED3493ABF802A1 /* Sources */,
+				889CE87E6392E1D7B81AFD2D18B2EE4C /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Pods-Putaway Disk Image File";
-			productName = "Pods-Putaway Disk Image File";
-			productReference = 2B8D540003D0D3C64B3226C2F0E99863 /* libPods-Putaway Disk Image File.a */;
+			name = "Pods-PutawayDMG";
+			productName = "Pods-PutawayDMG";
+			productReference = 1646F8B7E53C32A04F5498840422DB6F /* libPods-PutawayDMG.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -155,49 +155,27 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = D0FA072FE9BEA6CC239ECC6CA8A246C4 /* Products */;
+			productRefGroup = 3F093144532D8124D7381D5BC2552BD7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				752D91AFA6BE068C9F03849E65A3E118 /* Pods-Putaway Disk Image File */,
+				D255CBF4319E9C4756826DC772EA10BE /* Pods-PutawayDMG */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		AF7DA69786E27DD528C38DCAEBE32B47 /* Sources */ = {
+		E518863F96BA010029ED3493ABF802A1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D497493D788B5423064986CA6C4C244 /* Pods-Putaway Disk Image File-dummy.m in Sources */,
+				B36C855273635218BBD7BCB770AD91C6 /* Pods-PutawayDMG-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		265355DD01AEAD1C893C5F6F0AC4AA81 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 730D563C4423C0E925526273D99FF436 /* Pods-Putaway Disk Image File.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				EXECUTABLE_PREFIX = lib;
-				GCC_NO_COMMON_BLOCKS = YES;
-				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
 		68409A7CC907C65CC4632EA7B8F024D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -240,9 +218,31 @@
 			};
 			name = Debug;
 		};
-		B49D605A6C3DA05F6FD3237F4B4F4FDE /* Debug */ = {
+		6CCA6B542C08AABCECA137C0A12E364C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CD41CF7E5A6A6C5588C55A891DF30079 /* Pods-Putaway Disk Image File.debug.xcconfig */;
+			baseConfigurationReference = 2C551458A7E193912FFD8679C2F58058 /* Pods-PutawayDMG.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXECUTABLE_PREFIX = lib;
+				GCC_NO_COMMON_BLOCKS = YES;
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		A65D90FAAD79CD1B851DC710EAE2E091 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BD389614E1FE7ACAF1CA9D3D5084FA0 /* Pods-PutawayDMG.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -303,20 +303,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		08B192D5C940C122435DB37BE229C8FF /* Build configuration list for PBXNativeTarget "Pods-PutawayDMG" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A65D90FAAD79CD1B851DC710EAE2E091 /* Debug */,
+				6CCA6B542C08AABCECA137C0A12E364C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				68409A7CC907C65CC4632EA7B8F024D8 /* Debug */,
 				B5527E718D62AA611740378AF093618F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9644B9B198C250E57ACAF53710D6C1E4 /* Build configuration list for PBXNativeTarget "Pods-Putaway Disk Image File" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B49D605A6C3DA05F6FD3237F4B4F4FDE /* Debug */,
-				265355DD01AEAD1C893C5F6F0AC4AA81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

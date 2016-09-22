@@ -4,17 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-Putaway Disk Image File.xcscheme</key>
+		<key>Pods-PutawayDMG.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>752D91AFA6BE068C9F03849E65A3E118</key>
+		<key>D255CBF4319E9C4756826DC772EA10BE</key>
 		<dict>
 			<key>primary</key>
 			<true/>

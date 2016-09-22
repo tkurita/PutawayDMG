@@ -5,6 +5,6 @@ target 'PutawayDMG' do
   # Uncomment this line if you're using Swift or would like to use dynamic frameworks
   # use_frameworks!
 
-  # Pods for Putaway Disk Image File
+  # Pods for PutawayDMG
   pod 'Sparkle'
 end

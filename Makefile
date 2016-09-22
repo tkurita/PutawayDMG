@@ -1,3 +1,3 @@
 install:
-	xcodebuild -workspace Putaway\ Disk\ Image\ File.xcworkspace -scheme Putaway\ Disk\ Image\ File clean install DSTROOT=${HOME}
+	xcodebuild -workspace PutawayDMG.xcworkspace -scheme PutawayDMG clean install DSTROOT=${HOME}
 

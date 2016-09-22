@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1650029EDEB22712ACFDFF16 /* libPods-Putaway Disk Image File.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 23C914C7C88613D12D5AFB69 /* libPods-Putaway Disk Image File.a */; };
 		2C246AAC19E4204200A17ED3 /* NSTask+SimpleTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C246AAB19E4204200A17ED3 /* NSTask+SimpleTask.m */; };
 		2C3367DB19E390540070C838 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC2B1A819DE6A0F00CDE9D2 /* main.m */; };
 		2C6091291D91540A00EEC1A9 /* DonationReminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C6091261D9153D700EEC1A9 /* DonationReminder.framework */; };
@@ -22,7 +21,8 @@
 		2CC39C8519E66872001384E2 /* ServicesMenu.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CC39C8719E66872001384E2 /* ServicesMenu.strings */; };
 		2CC39C8B19E66C9B001384E2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CC39C8D19E66C9B001384E2 /* Localizable.strings */; };
 		2CC39C9319E67252001384E2 /* MainMenu.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CC39C9119E67252001384E2 /* MainMenu.strings */; };
-		2CE3D5351D8B80E00010B3C8 /* Putaway-Disk-Image-File-Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2CE3D5341D8B80E00010B3C8 /* Putaway-Disk-Image-File-Icon.icns */; };
+		2CE3D5351D8B80E00010B3C8 /* PutawayDMG.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2CE3D5341D8B80E00010B3C8 /* PutawayDMG.icns */; };
+		40F68A0EB99A40193D42B18E /* libPods-PutawayDMG.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AC649245A76379CD741213C /* libPods-PutawayDMG.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,9 +56,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		054944DD94EF24FF201E7376 /* Pods-Putaway Disk Image File.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Putaway Disk Image File.release.xcconfig"; path = "Pods/Target Support Files/Pods-Putaway Disk Image File/Pods-Putaway Disk Image File.release.xcconfig"; sourceTree = "<group>"; };
-		17AA53E45A6A1CE746A20704 /* Pods-Putaway Disk Image File.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Putaway Disk Image File.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Putaway Disk Image File/Pods-Putaway Disk Image File.debug.xcconfig"; sourceTree = "<group>"; };
-		23C914C7C88613D12D5AFB69 /* libPods-Putaway Disk Image File.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Putaway Disk Image File.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C246AAA19E4204200A17ED3 /* NSTask+SimpleTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTask+SimpleTask.h"; sourceTree = "<group>"; };
 		2C246AAB19E4204200A17ED3 /* NSTask+SimpleTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTask+SimpleTask.m"; sourceTree = "<group>"; };
 		2C4A364919E64D7B0031E521 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -82,8 +79,11 @@
 		2CC39C8C19E66C9B001384E2 /* en */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2CC39C8E19E66C9C001384E2 /* ja */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2CC39C9219E67252001384E2 /* ja */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/MainMenu.strings; sourceTree = "<group>"; };
-		2CE3D5341D8B80E00010B3C8 /* Putaway-Disk-Image-File-Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "Putaway-Disk-Image-File-Icon.icns"; sourceTree = "<group>"; };
+		2CE3D5341D8B80E00010B3C8 /* PutawayDMG.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = PutawayDMG.icns; sourceTree = "<group>"; };
 		2CF36BE11D79A2B1005C56DE /* History.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = History.md; path = ../History.md; sourceTree = "<group>"; };
+		621CD648C2C676D59D9DD5D1 /* Pods-PutawayDMG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PutawayDMG.release.xcconfig"; path = "Pods/Target Support Files/Pods-PutawayDMG/Pods-PutawayDMG.release.xcconfig"; sourceTree = "<group>"; };
+		8AC649245A76379CD741213C /* libPods-PutawayDMG.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PutawayDMG.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABC675DBC28D675F04C13014 /* Pods-PutawayDMG.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PutawayDMG.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PutawayDMG/Pods-PutawayDMG.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +94,7 @@
 				2C71B6491D79685A0001DC59 /* AppleScriptObjC.framework in Frameworks */,
 				2C71B6471D79684A0001DC59 /* Cocoa.framework in Frameworks */,
 				2C6091291D91540A00EEC1A9 /* DonationReminder.framework in Frameworks */,
-				1650029EDEB22712ACFDFF16 /* libPods-Putaway Disk Image File.a in Frameworks */,
+				40F68A0EB99A40193D42B18E /* libPods-PutawayDMG.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,12 +112,12 @@
 		2CC2B18E19DE6A0F00CDE9D2 = {
 			isa = PBXGroup;
 			children = (
-				2C6091131D9146DE00EEC1A9 /* Podfile */,
 				2CF36BE11D79A2B1005C56DE /* History.md */,
 				2CC2B1A219DE6A0F00CDE9D2 /* PutawayDMG */,
 				2CC2B19919DE6A0F00CDE9D2 /* Frameworks */,
 				2CC2B19819DE6A0F00CDE9D2 /* Products */,
 				68BC6E5BD4589FBB0F2043CB /* Pods */,
+				2C6091131D9146DE00EEC1A9 /* Podfile */,
 				2C6091211D9153D700EEC1A9 /* DonationReminder.xcodeproj */,
 			);
 			sourceTree = "<group>";
@@ -136,7 +136,7 @@
 				2C71B6481D79685A0001DC59 /* AppleScriptObjC.framework */,
 				2C71B6461D79684A0001DC59 /* Cocoa.framework */,
 				2CC2B19E19DE6A0F00CDE9D2 /* Other Frameworks */,
-				23C914C7C88613D12D5AFB69 /* libPods-Putaway Disk Image File.a */,
+				8AC649245A76379CD741213C /* libPods-PutawayDMG.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -165,7 +165,7 @@
 		2CC2B1A319DE6A0F00CDE9D2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2CE3D5341D8B80E00010B3C8 /* Putaway-Disk-Image-File-Icon.icns */,
+				2CE3D5341D8B80E00010B3C8 /* PutawayDMG.icns */,
 				2CC39C9119E67252001384E2 /* MainMenu.strings */,
 				2CC2B1A419DE6A0F00CDE9D2 /* PutawayDMG-Info.plist */,
 				2CC2B1A519DE6A0F00CDE9D2 /* InfoPlist.strings */,
@@ -181,8 +181,8 @@
 		68BC6E5BD4589FBB0F2043CB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				17AA53E45A6A1CE746A20704 /* Pods-Putaway Disk Image File.debug.xcconfig */,
-				054944DD94EF24FF201E7376 /* Pods-Putaway Disk Image File.release.xcconfig */,
+				ABC675DBC28D675F04C13014 /* Pods-PutawayDMG.debug.xcconfig */,
+				621CD648C2C676D59D9DD5D1 /* Pods-PutawayDMG.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -270,7 +270,7 @@
 				2CC2B1AD19DE6A0F00CDE9D2 /* Credits.rtf in Resources */,
 				2CC2B1B219DE6A1000CDE9D2 /* MainMenu.xib in Resources */,
 				2CC39C8519E66872001384E2 /* ServicesMenu.strings in Resources */,
-				2CE3D5351D8B80E00010B3C8 /* Putaway-Disk-Image-File-Icon.icns in Resources */,
+				2CE3D5351D8B80E00010B3C8 /* PutawayDMG.icns in Resources */,
 				2CC39C8B19E66C9B001384E2 /* Localizable.strings in Resources */,
 				2CC39C9319E67252001384E2 /* MainMenu.strings in Resources */,
 			);
@@ -291,7 +291,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Putaway Disk Image File/Pods-Putaway Disk Image File-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PutawayDMG/Pods-PutawayDMG-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		27554F4C0489AAEF7119EB02 /* [CP] Copy Pods Resources */ = {
@@ -306,7 +306,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Putaway Disk Image File/Pods-Putaway Disk Image File-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PutawayDMG/Pods-PutawayDMG-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C2C98B0A6989C8104F32ECB1 /* [CP] Check Pods Manifest.lock */ = {
@@ -466,7 +466,7 @@
 		};
 		2CC2B1B619DE6A1000CDE9D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 17AA53E45A6A1CE746A20704 /* Pods-Putaway Disk Image File.debug.xcconfig */;
+			baseConfigurationReference = ABC675DBC28D675F04C13014 /* Pods-PutawayDMG.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
@@ -477,8 +477,7 @@
 					"$(PROJECT_DIR)/DonationReminder/build/Debug",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Putaway Disk Image File/PutawayDMG-Prefix.pch";
-				INFOPLIST_FILE = "Putaway Disk Image File/PutawayDMG-Info.plist";
+				INFOPLIST_FILE = "PutawayDMG/PutawayDMG-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.PutawayDMG";
 				PRODUCT_NAME = PutawayDMG;
@@ -489,7 +488,7 @@
 		};
 		2CC2B1B719DE6A1000CDE9D2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 054944DD94EF24FF201E7376 /* Pods-Putaway Disk Image File.release.xcconfig */;
+			baseConfigurationReference = 621CD648C2C676D59D9DD5D1 /* Pods-PutawayDMG.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
@@ -500,8 +499,7 @@
 					"$(PROJECT_DIR)/DonationReminder/build/Debug",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Putaway Disk Image File/PutawayDMG-Prefix.pch";
-				INFOPLIST_FILE = "Putaway Disk Image File/PutawayDMG-Info.plist";
+				INFOPLIST_FILE = "PutawayDMG/PutawayDMG-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.PutawayDMG";
 				PRODUCT_NAME = PutawayDMG;
