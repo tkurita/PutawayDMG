@@ -1,7 +1,7 @@
 script ASBridge
 	property parent : class "NSObject"
-	property FinderSelection : module
-    property loader : boot (module loader) for me
+	property FinderSelection : "@module"
+    property loader : script "ModuleLoader"'s setup(me)
     property appDelegate : missing value
     
     on finderSelectionWithMountPoint_(mount_point)

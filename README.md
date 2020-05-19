@@ -9,16 +9,16 @@ Japanese :
 ## Building
 Reqirements :
 * OS X 10.8 or later.
-* Xcode 6.3 or later.
+* Xcode
 * [ModuleLoader]
 * [FinderSelection]
 
-[ModuleLoader]: http://www.script-factory.net/software/OSAX/ModuleLoader/en/index.html
-[FinderSelection]: http://www.script-factory.net/XModules/FinderSelection/index.html
+[ModuleLoader]: https://www.script-factory.net/XModules/ModuleLoader/en/index.html
+[FinderSelection]: https://www.script-factory.net/XModules/FinderSelection/en/index.html
 
 ## Licence
 
-Copyright &copy; 2007-2016 Tetsuro Kurita
+Copyright &copy; 2007-2020 Kurita Tetsuro
 Licensed under the [GPL license][GPL].
  
 [GPL]: http://www.gnu.org/licenses/gpl.html
