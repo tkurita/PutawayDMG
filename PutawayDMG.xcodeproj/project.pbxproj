@@ -65,6 +65,7 @@
 		2C6091211D9153D700EEC1A9 /* DonationReminder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DonationReminder.xcodeproj; path = DonationReminder/DonationReminder.xcodeproj; sourceTree = "<group>"; };
 		2C71B6461D79684A0001DC59 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		2C71B6481D79685A0001DC59 /* AppleScriptObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptObjC.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/AppleScriptObjC.framework; sourceTree = DEVELOPER_DIR; };
+		2CB030F22473F06F00AB276C /* PutawayDMG.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PutawayDMG.entitlements; sourceTree = "<group>"; };
 		2CC2B19719DE6A0F00CDE9D2 /* PutawayDMG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PutawayDMG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CC2B1A419DE6A0F00CDE9D2 /* PutawayDMG-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PutawayDMG-Info.plist"; sourceTree = "<group>"; };
 		2CC2B1A619DE6A0F00CDE9D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -151,6 +152,7 @@
 		2CC2B1A219DE6A0F00CDE9D2 /* PutawayDMG */ = {
 			isa = PBXGroup;
 			children = (
+				2CB030F22473F06F00AB276C /* PutawayDMG.entitlements */,
 				2C246AAA19E4204200A17ED3 /* NSTask+SimpleTask.h */,
 				2C246AAB19E4204200A17ED3 /* NSTask+SimpleTask.m */,
 				2CC2B1AE19DE6A0F00CDE9D2 /* ASBridge.applescript */,
@@ -218,7 +220,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1130;
-				ORGANIZATIONNAME = "栗田 哲郎";
+				ORGANIZATIONNAME = "Kurita Tetsuro";
 				TargetAttributes = {
 					2CC2B19619DE6A0F00CDE9D2 = {
 						DevelopmentTeam = 5VBC6385DN;
@@ -418,7 +420,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 18;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -469,7 +471,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 18;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -492,6 +494,7 @@
 			baseConfigurationReference = ABC675DBC28D675F04C13014 /* Pods-PutawayDMG.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = PutawayDMG/PutawayDMG.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				COMBINE_HIDPI_IMAGES = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -503,6 +506,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = "PutawayDMG/PutawayDMG-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.PutawayDMG";
 				PRODUCT_NAME = PutawayDMG;
 				SDKROOT = macosx;
@@ -515,6 +519,7 @@
 			baseConfigurationReference = 621CD648C2C676D59D9DD5D1 /* Pods-PutawayDMG.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = PutawayDMG/PutawayDMG.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				COMBINE_HIDPI_IMAGES = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -526,6 +531,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = "PutawayDMG/PutawayDMG-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.script-factory.PutawayDMG";
 				PRODUCT_NAME = PutawayDMG;
 				SDKROOT = macosx;
