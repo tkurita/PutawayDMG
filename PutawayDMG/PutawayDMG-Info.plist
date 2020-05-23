@@ -82,5 +82,9 @@
 	<string>https://www.script-factory.net/appcast/PutawayDMG.xml</string>
 	<key>SUPublicDSAKeyFile</key>
 	<string>dsa_pub.pem</string>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>PutawayDMG require to control Finder via AppleScript to run.</string>
+	<key>NSSystemAdministrationUsageDescription</key>
+	<string>This application needs access to administer this system to run.</string>
 </dict>
 </plist>
